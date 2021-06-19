@@ -1,5 +1,5 @@
 ﻿
-namespace SistemaDeVacunacion
+namespace VaccinationSystemManager
 {
     partial class Form1
     {

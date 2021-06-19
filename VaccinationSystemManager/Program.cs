@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SistemaDeVacunacion
+
+namespace VaccinationSystemManager
 {
     static class Program
     {
