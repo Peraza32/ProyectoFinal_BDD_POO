@@ -49,8 +49,10 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
@@ -66,48 +68,52 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel1.Controls.Add(this.txtDui, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.txtName, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 9);
-            this.tableLayoutPanel1.Controls.Add(this.txtAddres, 1, 10);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 11);
-            this.tableLayoutPanel1.Controls.Add(this.txtPhoneNumber, 1, 12);
-            this.tableLayoutPanel1.Controls.Add(this.txtEMail, 1, 14);
-            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 13);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 15);
-            this.tableLayoutPanel1.Controls.Add(this.txtDiseases, 1, 16);
-            this.tableLayoutPanel1.Controls.Add(this.label7, 1, 17);
-            this.tableLayoutPanel1.Controls.Add(this.txtDisabilities, 1, 18);
-            this.tableLayoutPanel1.Controls.Add(this.label8, 1, 19);
-            this.tableLayoutPanel1.Controls.Add(this.txtEssentialInstitution, 1, 20);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 21);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 1, 11);
+            this.tableLayoutPanel1.Controls.Add(this.txtAddres, 1, 12);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 13);
+            this.tableLayoutPanel1.Controls.Add(this.txtPhoneNumber, 1, 14);
+            this.tableLayoutPanel1.Controls.Add(this.txtEMail, 1, 16);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 1, 15);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 1, 17);
+            this.tableLayoutPanel1.Controls.Add(this.txtDiseases, 1, 18);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 1, 19);
+            this.tableLayoutPanel1.Controls.Add(this.txtDisabilities, 1, 20);
+            this.tableLayoutPanel1.Controls.Add(this.label8, 1, 21);
+            this.tableLayoutPanel1.Controls.Add(this.txtEssentialInstitution, 1, 22);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 23);
             this.tableLayoutPanel1.Controls.Add(this.picLogo, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label9, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.dtpBirthDate, 1, 10);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 23;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.847939F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.571456F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.033719F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.698637F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.033719F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.933707F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.867415F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.933707F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.867415F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.933707F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.867415F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.933707F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.867415F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.938168F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.867181F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.921287F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.491333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.921287F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.491333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.921287F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.491333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.71889F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.847939F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(597, 934);
+            this.tableLayoutPanel1.RowCount = 25;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.617591F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.878177F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.869227F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.318601F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.869227F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.696422F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.392845F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.696422F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.392845F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.693015F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.395221F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.696422F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.392845F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.696422F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.392845F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.700522F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.39263F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.685006F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.047181F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.685006F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.047181F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.685006F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.047181F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.094569F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 2.617591F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(597, 982);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -115,7 +121,7 @@ namespace VaccinationSystemManager.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(122, 185);
+            this.label1.Location = new System.Drawing.Point(122, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(42, 26);
             this.label1.TabIndex = 0;
@@ -124,17 +130,18 @@ namespace VaccinationSystemManager.Views
             // txtDui
             // 
             this.txtDui.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDui.Location = new System.Drawing.Point(122, 215);
+            this.txtDui.Location = new System.Drawing.Point(122, 209);
             this.txtDui.Name = "txtDui";
             this.txtDui.Size = new System.Drawing.Size(352, 31);
             this.txtDui.TabIndex = 1;
+            this.txtDui.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDui_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(122, 266);
+            this.label2.Location = new System.Drawing.Point(122, 258);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(173, 26);
             this.label2.TabIndex = 2;
@@ -143,7 +150,7 @@ namespace VaccinationSystemManager.Views
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.Location = new System.Drawing.Point(122, 296);
+            this.txtName.Location = new System.Drawing.Point(122, 287);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(352, 31);
             this.txtName.TabIndex = 3;
@@ -153,7 +160,7 @@ namespace VaccinationSystemManager.Views
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(122, 347);
+            this.label3.Location = new System.Drawing.Point(122, 414);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 26);
             this.label3.TabIndex = 4;
@@ -162,7 +169,7 @@ namespace VaccinationSystemManager.Views
             // txtAddres
             // 
             this.txtAddres.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAddres.Location = new System.Drawing.Point(122, 377);
+            this.txtAddres.Location = new System.Drawing.Point(122, 443);
             this.txtAddres.Name = "txtAddres";
             this.txtAddres.Size = new System.Drawing.Size(352, 31);
             this.txtAddres.TabIndex = 5;
@@ -172,7 +179,7 @@ namespace VaccinationSystemManager.Views
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(122, 428);
+            this.label4.Location = new System.Drawing.Point(122, 492);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 26);
             this.label4.TabIndex = 6;
@@ -181,15 +188,16 @@ namespace VaccinationSystemManager.Views
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPhoneNumber.Location = new System.Drawing.Point(122, 458);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(122, 521);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(352, 31);
             this.txtPhoneNumber.TabIndex = 7;
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // txtEMail
             // 
             this.txtEMail.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEMail.Location = new System.Drawing.Point(122, 539);
+            this.txtEMail.Location = new System.Drawing.Point(122, 599);
             this.txtEMail.Name = "txtEMail";
             this.txtEMail.Size = new System.Drawing.Size(352, 31);
             this.txtEMail.TabIndex = 9;
@@ -199,7 +207,7 @@ namespace VaccinationSystemManager.Views
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(122, 509);
+            this.label5.Location = new System.Drawing.Point(122, 570);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(267, 26);
             this.label5.TabIndex = 8;
@@ -210,7 +218,7 @@ namespace VaccinationSystemManager.Views
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(122, 590);
+            this.label6.Location = new System.Drawing.Point(122, 648);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(222, 26);
             this.label6.TabIndex = 12;
@@ -219,7 +227,7 @@ namespace VaccinationSystemManager.Views
             // txtDiseases
             // 
             this.txtDiseases.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDiseases.Location = new System.Drawing.Point(122, 620);
+            this.txtDiseases.Location = new System.Drawing.Point(122, 677);
             this.txtDiseases.Name = "txtDiseases";
             this.txtDiseases.Size = new System.Drawing.Size(352, 31);
             this.txtDiseases.TabIndex = 13;
@@ -229,7 +237,7 @@ namespace VaccinationSystemManager.Views
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(122, 668);
+            this.label7.Location = new System.Drawing.Point(122, 723);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(153, 26);
             this.label7.TabIndex = 15;
@@ -238,7 +246,7 @@ namespace VaccinationSystemManager.Views
             // txtDisabilities
             // 
             this.txtDisabilities.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDisabilities.Location = new System.Drawing.Point(122, 698);
+            this.txtDisabilities.Location = new System.Drawing.Point(122, 752);
             this.txtDisabilities.Name = "txtDisabilities";
             this.txtDisabilities.Size = new System.Drawing.Size(352, 31);
             this.txtDisabilities.TabIndex = 16;
@@ -248,7 +256,7 @@ namespace VaccinationSystemManager.Views
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(122, 746);
+            this.label8.Location = new System.Drawing.Point(122, 798);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(236, 26);
             this.label8.TabIndex = 18;
@@ -257,7 +265,7 @@ namespace VaccinationSystemManager.Views
             // txtEssentialInstitution
             // 
             this.txtEssentialInstitution.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEssentialInstitution.Location = new System.Drawing.Point(122, 776);
+            this.txtEssentialInstitution.Location = new System.Drawing.Point(122, 827);
             this.txtEssentialInstitution.Name = "txtEssentialInstitution";
             this.txtEssentialInstitution.Size = new System.Drawing.Size(352, 31);
             this.txtEssentialInstitution.TabIndex = 19;
@@ -269,12 +277,12 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnCancel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnRegister, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(122, 827);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(122, 876);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(352, 64);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(352, 63);
             this.tableLayoutPanel2.TabIndex = 20;
             // 
             // btnCancel
@@ -286,10 +294,11 @@ namespace VaccinationSystemManager.Views
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(3, 3);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(170, 58);
+            this.btnCancel.Size = new System.Drawing.Size(170, 57);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnRegister
             // 
@@ -300,10 +309,23 @@ namespace VaccinationSystemManager.Views
             this.btnRegister.ForeColor = System.Drawing.Color.White;
             this.btnRegister.Location = new System.Drawing.Point(179, 3);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(170, 58);
+            this.btnRegister.Size = new System.Drawing.Size(170, 57);
             this.btnRegister.TabIndex = 0;
             this.btnRegister.Text = "Registrar";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // picLogo
+            // 
+            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tableLayoutPanel1.SetColumnSpan(this.picLogo, 3);
+            this.picLogo.Image = global::VaccinationSystemManager.Properties.Resources.Logo_GOES2;
+            this.picLogo.Location = new System.Drawing.Point(3, 28);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(591, 71);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.picLogo.TabIndex = 21;
+            this.picLogo.TabStop = false;
             // 
             // label9
             // 
@@ -311,30 +333,37 @@ namespace VaccinationSystemManager.Views
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(158, 130);
+            this.label9.Location = new System.Drawing.Point(158, 125);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(279, 31);
             this.label9.TabIndex = 22;
             this.label9.Text = "REGISTRO DE CITA";
             // 
-            // picLogo
+            // label10
             // 
-            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tableLayoutPanel1.SetColumnSpan(this.picLogo, 3);
-            this.picLogo.Image = global::VaccinationSystemManager.Properties.Resources.Logo_GOES2;
-            this.picLogo.Location = new System.Drawing.Point(3, 29);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(591, 72);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picLogo.TabIndex = 21;
-            this.picLogo.TabStop = false;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(122, 336);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(198, 26);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Fecha de nacimiento";
+            // 
+            // dtpBirthDate
+            // 
+            this.dtpBirthDate.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpBirthDate.Location = new System.Drawing.Point(122, 365);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(352, 31);
+            this.dtpBirthDate.TabIndex = 24;
             // 
             // frmAppointmentProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(599, 940);
+            this.ClientSize = new System.Drawing.Size(599, 994);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(93)))), ((int)(((byte)(240)))));
@@ -375,5 +404,7 @@ namespace VaccinationSystemManager.Views
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dtpBirthDate;
     }
 }
