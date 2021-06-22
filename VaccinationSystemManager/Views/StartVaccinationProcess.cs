@@ -94,8 +94,8 @@ namespace VaccinationSystemManager.Views
                     else
                     {
                         //Create an Side Effect form
-                        //frmStartVaccinationProcess StartVaccination = new frmStartVaccinationProcess(newCitizen, checkAppointment);
-                        //StartVaccination.Show();
+                        frmSideEffects VaccineSideEffect = new frmSideEffects(vaccinationProcess);
+                        VaccineSideEffect.Show();
                         
                         this.Close();
                     }
