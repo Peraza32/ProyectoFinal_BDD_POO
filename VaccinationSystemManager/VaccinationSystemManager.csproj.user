@@ -4,6 +4,9 @@
     <Compile Update="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\StartVaccinationProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\VerifyCitizenAppointment.cs">
       <SubType>Form</SubType>
     </Compile>

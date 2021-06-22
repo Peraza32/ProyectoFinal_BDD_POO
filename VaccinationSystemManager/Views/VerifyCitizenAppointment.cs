@@ -75,9 +75,12 @@ namespace VaccinationSystemManager.Views
                     if (hours <= 0)
                     {
                         //Start Vaccination Process
+                        frmStartVaccinationProcess StartVaccination = new frmStartVaccinationProcess(newCitizen, checkAppointment);
+                        StartVaccination.Show();
 
+                        this.Hide();
 
-                        this.Close();
+                        //this.Close();
                     }
                     //Too early (hours > 0)
                     else
@@ -113,7 +116,7 @@ namespace VaccinationSystemManager.Views
             }
             else
             {
-                MessageBox.Show("El ciudadano no cuenta con ninguna cita, es necesario agendar una cita para iniciar el proceso de vacunación",
+                MessageBox.Show("El ciudadano no cuenta con ninguna cita registada, es necesario agendar una cita para iniciar el proceso de vacunación",
                     "Vacunación COVID-19",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 

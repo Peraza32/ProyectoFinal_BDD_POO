@@ -109,7 +109,7 @@ namespace VaccinationSystemManager.Views
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmVerifyCitizen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form2";
+            this.Text = "Verify Citizen";
             this.ResumeLayout(false);
             this.PerformLayout();
 
