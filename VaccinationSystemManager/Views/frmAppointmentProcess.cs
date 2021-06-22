@@ -45,7 +45,7 @@ namespace VaccinationSystemManager.Views
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            var db = new Model.G4ProyectoDBContext();
+            var db = new G4ProyectoDBContext();
 
             // stores the dui of the citizen
             string dui = txtDui.Text;
@@ -272,8 +272,7 @@ namespace VaccinationSystemManager.Views
             }
 
             // shows "Appointment Details" form 
-            frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(dui, 
-                name, newAppointment.AppointmentDate, vaccinationCenterBDD.CenterName, this);
+            frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(newAppointment, this);
             frmAppointmentProcessDetails.Show();
             Hide();
         }

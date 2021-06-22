@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VaccinationSystemManager.Model;
 
 namespace VaccinationSystemManager.Views
 {
@@ -17,18 +18,32 @@ namespace VaccinationSystemManager.Views
         string name;
         string date;
         string hour;
-        string vaccinationCenter;
+        string vaccinationCenterName;
+        Citizen citizen;
+        VaccinationCenter vaccinationCenter;
+        DoseType doseType;
 
-        public frmAppointmentProcessDetails(string citizenDui, string citizenName, DateTime appointmentDate, 
-            string nameVaccinationCenter, frmAppointmentProcess frmAppointmentProcess)
+        public frmAppointmentProcessDetails(Appointment anAppointment, frmAppointmentProcess frmAppointmentProcess)
         {
             InitializeComponent();
+            var db = new G4ProyectoDBContext();
+
+            // recovers the citizen from BDD
+            citizen = db.Citizens.SingleOrDefault(c => c.Dui == anAppointment.DuiCitizen);
+
+            // recovers the vaccination center from BDD
+            vaccinationCenter = db.VaccinationCenters.SingleOrDefault(vc => vc.Id == anAppointment.IdCenter);
+
+            // recovers the dose type from BDD
+            doseType = db.DoseTypes.SingleOrDefault(dt => dt.Id == anAppointment.ShotType);
+
             refAppointmentProcess = frmAppointmentProcess;
-            dui = citizenDui;
-            name = citizenName;
-            date = appointmentDate.ToString("dd-MM-yyyy");
-            hour = appointmentDate.ToString("hh:mm tt");
-            vaccinationCenter = nameVaccinationCenter;
+
+            dui = anAppointment.DuiCitizen;
+            name = citizen.CitizenName;
+            date = anAppointment.AppointmentDate.ToString("dd-MM-yyyy");
+            hour = anAppointment.AppointmentDate.ToString("hh:mm tt");
+            vaccinationCenterName = vaccinationCenter.CenterName;
         }
 
         private void frmAppointmentProcessDetails_Load(object sender, EventArgs e)
@@ -37,7 +52,11 @@ namespace VaccinationSystemManager.Views
             lblCitizenName.Text = name;
             lblDate.Text = date;
             lblHour.Text = hour;
-            lblVaccinationCenter.Text = vaccinationCenter;
+
+            if (doseType.Id == 1)
+                lblDoseType.Text = "Primera Dosis";
+            else
+                lblDoseType.Text = "Segunda Dosis";
         }
 
         private void btnClose_Click(object sender, EventArgs e)

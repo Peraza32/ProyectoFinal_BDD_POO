@@ -30,22 +30,22 @@ namespace VaccinationSystemManager.Views
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblHour = new System.Windows.Forms.Label();
+            this.lblCitizenName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblDui = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblCitizenName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblHour = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblVaccinationCenter = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblShot = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblDoseType = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +72,7 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel1.Controls.Add(this.btnPrint, 1, 12);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 10);
             this.tableLayoutPanel1.Controls.Add(this.btnClose, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblShot, 2, 10);
+            this.tableLayoutPanel1.Controls.Add(this.lblDoseType, 2, 10);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 14;
@@ -92,6 +92,30 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.609828F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(656, 632);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // lblHour
+            // 
+            this.lblHour.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHour.AutoSize = true;
+            this.lblHour.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblHour.ForeColor = System.Drawing.Color.White;
+            this.lblHour.Location = new System.Drawing.Point(199, 350);
+            this.lblHour.Name = "lblHour";
+            this.lblHour.Size = new System.Drawing.Size(125, 34);
+            this.lblHour.TabIndex = 31;
+            this.lblHour.Text = "08:00:00";
+            // 
+            // lblCitizenName
+            // 
+            this.lblCitizenName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblCitizenName.AutoSize = true;
+            this.lblCitizenName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCitizenName.ForeColor = System.Drawing.Color.White;
+            this.lblCitizenName.Location = new System.Drawing.Point(199, 270);
+            this.lblCitizenName.Name = "lblCitizenName";
+            this.lblCitizenName.Size = new System.Drawing.Size(347, 30);
+            this.lblCitizenName.TabIndex = 27;
+            this.lblCitizenName.Text = "Eddy René Barahona Hernández";
             // 
             // pictureBox1
             // 
@@ -153,18 +177,6 @@ namespace VaccinationSystemManager.Views
             this.label2.TabIndex = 26;
             this.label2.Text = "Paciente";
             // 
-            // lblCitizenName
-            // 
-            this.lblCitizenName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblCitizenName.AutoSize = true;
-            this.lblCitizenName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCitizenName.ForeColor = System.Drawing.Color.White;
-            this.lblCitizenName.Location = new System.Drawing.Point(199, 270);
-            this.lblCitizenName.Name = "lblCitizenName";
-            this.lblCitizenName.Size = new System.Drawing.Size(347, 30);
-            this.lblCitizenName.TabIndex = 27;
-            this.lblCitizenName.Text = "Eddy René Barahona Hernández";
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -200,18 +212,6 @@ namespace VaccinationSystemManager.Views
             this.label3.Size = new System.Drawing.Size(70, 34);
             this.label3.TabIndex = 30;
             this.label3.Text = "Hora";
-            // 
-            // lblHour
-            // 
-            this.lblHour.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblHour.AutoSize = true;
-            this.lblHour.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHour.ForeColor = System.Drawing.Color.White;
-            this.lblHour.Location = new System.Drawing.Point(199, 350);
-            this.lblHour.Name = "lblHour";
-            this.lblHour.Size = new System.Drawing.Size(125, 34);
-            this.lblHour.TabIndex = 31;
-            this.lblHour.Text = "08:00:00";
             // 
             // label5
             // 
@@ -265,18 +265,6 @@ namespace VaccinationSystemManager.Views
             this.label6.TabIndex = 35;
             this.label6.Text = "Dosis";
             // 
-            // lblShot
-            // 
-            this.lblShot.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblShot.AutoSize = true;
-            this.lblShot.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblShot.ForeColor = System.Drawing.Color.White;
-            this.lblShot.Location = new System.Drawing.Point(199, 432);
-            this.lblShot.Name = "lblShot";
-            this.lblShot.Size = new System.Drawing.Size(179, 34);
-            this.lblShot.TabIndex = 36;
-            this.lblShot.Text = "Primera Dosis";
-            // 
             // btnClose
             // 
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -292,6 +280,18 @@ namespace VaccinationSystemManager.Views
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // lblDoseType
+            // 
+            this.lblDoseType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDoseType.AutoSize = true;
+            this.lblDoseType.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDoseType.ForeColor = System.Drawing.Color.White;
+            this.lblDoseType.Location = new System.Drawing.Point(199, 432);
+            this.lblDoseType.Name = "lblDoseType";
+            this.lblDoseType.Size = new System.Drawing.Size(179, 34);
+            this.lblDoseType.TabIndex = 36;
+            this.lblDoseType.Text = "Primera Dosis";
             // 
             // frmAppointmentProcessDetails
             // 
@@ -330,6 +330,6 @@ namespace VaccinationSystemManager.Views
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Label lblShot;
+        private System.Windows.Forms.Label lblDoseType;
     }
 }
