@@ -17,9 +17,11 @@ namespace VaccinationSystemManager.Controller
         private void LogAccess()
         {
             //writes the info in the login register
-            SessionControl newSession = new SessionControl { SessionDate = System.DateTime.Now,
-                                                             IdEmployee = database.Employees.Where(e=>e.EmployeeUser==this.Username).Select(e=>e.Id).FirstOrDefault(),
-                                                             IdCabin = database.Cabins.Where(c=>c==loginPlace).Select(c=>c.Id).FirstOrDefault()};
+            SessionControl newSession = new SessionControl{ 
+                                                            SessionDate = System.DateTime.Now,
+                                                            IdEmployee = database.Employees.Where(e => e.EmployeeUser == this.Username).Select(e => e.Id).FirstOrDefault(),
+                                                            IdCabin = database.Cabins.Where(c=>c==loginPlace).Select(c=>c.Id).FirstOrDefault()
+                                                          };
             database.SessionControls.Add(newSession);
             database.SaveChanges();
         }
