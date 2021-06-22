@@ -61,9 +61,8 @@ namespace VaccinationSystemManager.Views
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            refAppointmentProcess.dashboard.Show();
             Close();
-
-            // programar que se muestre el dashboard
         }
     }
 }

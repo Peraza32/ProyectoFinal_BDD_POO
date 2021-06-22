@@ -20,7 +20,6 @@ namespace VaccinationSystemManager.Controller
         public virtual bool SignIn()
         {
             //Constructs the dashboard with the logged employee
-            MessageBox.Show("A");
             return true;
         }
 

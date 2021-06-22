@@ -19,7 +19,7 @@ namespace VaccinationSystemManager
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAppointmentProcess());
+            Application.Run(new Form1());
         }
     }
 }
