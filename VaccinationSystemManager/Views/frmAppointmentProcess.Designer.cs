@@ -163,7 +163,7 @@ namespace VaccinationSystemManager.Views
             this.label3.Location = new System.Drawing.Point(122, 414);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 26);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 6;
             this.label3.Text = "Dirección";
             // 
             // txtAddres
@@ -172,7 +172,7 @@ namespace VaccinationSystemManager.Views
             this.txtAddres.Location = new System.Drawing.Point(122, 443);
             this.txtAddres.Name = "txtAddres";
             this.txtAddres.Size = new System.Drawing.Size(352, 31);
-            this.txtAddres.TabIndex = 5;
+            this.txtAddres.TabIndex = 7;
             // 
             // label4
             // 
@@ -182,7 +182,7 @@ namespace VaccinationSystemManager.Views
             this.label4.Location = new System.Drawing.Point(122, 492);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 26);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Número de teléfono";
             // 
             // txtPhoneNumber
@@ -191,7 +191,7 @@ namespace VaccinationSystemManager.Views
             this.txtPhoneNumber.Location = new System.Drawing.Point(122, 521);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(352, 31);
-            this.txtPhoneNumber.TabIndex = 7;
+            this.txtPhoneNumber.TabIndex = 9;
             this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // txtEMail
@@ -200,7 +200,7 @@ namespace VaccinationSystemManager.Views
             this.txtEMail.Location = new System.Drawing.Point(122, 599);
             this.txtEMail.Name = "txtEMail";
             this.txtEMail.Size = new System.Drawing.Size(352, 31);
-            this.txtEMail.TabIndex = 9;
+            this.txtEMail.TabIndex = 11;
             // 
             // label5
             // 
@@ -210,7 +210,7 @@ namespace VaccinationSystemManager.Views
             this.label5.Location = new System.Drawing.Point(122, 570);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(267, 26);
-            this.label5.TabIndex = 8;
+            this.label5.TabIndex = 10;
             this.label5.Text = "Correo electrónico (opcional)";
             // 
             // label6
@@ -240,7 +240,7 @@ namespace VaccinationSystemManager.Views
             this.label7.Location = new System.Drawing.Point(122, 723);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(153, 26);
-            this.label7.TabIndex = 15;
+            this.label7.TabIndex = 14;
             this.label7.Text = "Discapacidades";
             // 
             // txtDisabilities
@@ -249,7 +249,7 @@ namespace VaccinationSystemManager.Views
             this.txtDisabilities.Location = new System.Drawing.Point(122, 752);
             this.txtDisabilities.Name = "txtDisabilities";
             this.txtDisabilities.Size = new System.Drawing.Size(352, 31);
-            this.txtDisabilities.TabIndex = 16;
+            this.txtDisabilities.TabIndex = 15;
             // 
             // label8
             // 
@@ -259,7 +259,7 @@ namespace VaccinationSystemManager.Views
             this.label8.Location = new System.Drawing.Point(122, 798);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(236, 26);
-            this.label8.TabIndex = 18;
+            this.label8.TabIndex = 16;
             this.label8.Text = "Número de identificación";
             // 
             // txtEssentialInstitution
@@ -268,7 +268,7 @@ namespace VaccinationSystemManager.Views
             this.txtEssentialInstitution.Location = new System.Drawing.Point(122, 827);
             this.txtEssentialInstitution.Name = "txtEssentialInstitution";
             this.txtEssentialInstitution.Size = new System.Drawing.Size(352, 31);
-            this.txtEssentialInstitution.TabIndex = 19;
+            this.txtEssentialInstitution.TabIndex = 17;
             // 
             // tableLayoutPanel2
             // 
@@ -347,16 +347,18 @@ namespace VaccinationSystemManager.Views
             this.label10.Location = new System.Drawing.Point(122, 336);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(198, 26);
-            this.label10.TabIndex = 23;
+            this.label10.TabIndex = 4;
             this.label10.Text = "Fecha de nacimiento";
             // 
             // dtpBirthDate
             // 
             this.dtpBirthDate.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpBirthDate.Location = new System.Drawing.Point(122, 365);
             this.dtpBirthDate.Name = "dtpBirthDate";
             this.dtpBirthDate.Size = new System.Drawing.Size(352, 31);
-            this.dtpBirthDate.TabIndex = 24;
+            this.dtpBirthDate.TabIndex = 5;
+            this.dtpBirthDate.Value = new System.DateTime(2021, 6, 21, 0, 0, 0, 0);
             // 
             // frmAppointmentProcess
             // 
