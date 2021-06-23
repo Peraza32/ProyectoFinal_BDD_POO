@@ -7,6 +7,15 @@
     <Compile Update="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
+    <Compile Update="Views\SideEffects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\StartVaccinationProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\VerifyCitizenAppointment.cs">
+=======
     <Compile Update="Views\frmAppointmentExplorer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -14,6 +23,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\frmAppointmentProcessDetails.cs">
+>>>>>>> Appointment
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
