@@ -4,10 +4,16 @@
     <Compile Update="Views\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\frmAppointmentExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\frmAppointmentProcess.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Views\frmAppointmentProcessDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmViewAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
