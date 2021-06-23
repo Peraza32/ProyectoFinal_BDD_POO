@@ -5,9 +5,6 @@
 -- Integrante 3	[00143320	Peraza Bolaños, Víctor Daniel]
 -- Integrante 4	[00043920	Ramos Guardado, Diego Fernando]
 
-
-
-
 CREATE DATABASE G4ProyectoDB;
 USE G4ProyectoDB;
 SET LANGUAGE us_english;
@@ -25,7 +22,7 @@ CREATE TABLE CITIZEN(
 	identifier_number VARCHAR(50),
 	phone_number CHAR(12) NOT NULL,
 	citizen_address VARCHAR(100) NOT NULL,
-	e_mail VARCHAR(25)
+	e_mail VARCHAR(100)
 );
 
 CREATE TABLE EMPLOYEE_TYPE(
@@ -68,7 +65,7 @@ CREATE TABLE DISABILITY(
 CREATE TABLE VACCINATION_PROCESS(
 	id INT NOT NULL PRIMARY KEY IDENTITY,
 	vaccination_date DATE NOT NULL,
-	start_tiem TIME NOT NULL,
+	start_time TIME NOT NULL,
 	vaccination_time TIME NOT NULL,
 	end_time TIME NOT NULL,
 	shot_type INT NOT NULL FOREIGN KEY REFERENCES DOSE_TYPE(id),
@@ -101,15 +98,14 @@ CREATE TABLE SESSION_CONTROL(
 	id_cabin INT NOT NULL FOREIGN KEY REFERENCES CABIN(id)
 );
 
--- Need a PK-FK
 CREATE TABLE PRESENTED_SIDE_EFFECT(
-	id_vaccination_process INT NOT NULL,
-	id_side_effect INT NOT NULL,
-	CONSTRAINT PK_presented_side_effect PRIMARY KEY (id_vaccination_process, id_side_effect),
-	FOREIGN KEY (id_vaccination_process) REFERENCES VACCINATION_PROCESS(id),
-	FOREIGN KEY (id_side_effect) REFERENCES SIDE_EFFECT(id)
+	id INT PRIMARY KEY IDENTITY,
+	appearance_time INT NOT NULL,
+	id_vaccination_process INT NOT NULL FOREIGN KEY REFERENCES VACCINATION_PROCESS(id),
+	id_side_effect INT NOT NULL FOREIGN KEY REFERENCES SIDE_EFFECT(id)
 );
 
+-- Need a PK-FK
 CREATE TABLE IN_CHARGE(
 	id_employee INT NOT NULL,
 	id_cabin INT NOT NULL,
