@@ -106,11 +106,11 @@ namespace VaccinationSystemManager
             // 
             this.epLogin.ContainerControl = this;
             // 
-            // Form1
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 569);
+            this.ClientSize = new System.Drawing.Size(353, 511);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboCabin);
             this.Controls.Add(this.btnLogin);
@@ -118,7 +118,7 @@ namespace VaccinationSystemManager
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "frmLogin";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.epLogin)).EndInit();

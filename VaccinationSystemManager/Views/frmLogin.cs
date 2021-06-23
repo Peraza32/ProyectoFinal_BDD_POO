@@ -22,7 +22,6 @@ namespace VaccinationSystemManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
             cboCabin.DataSource = db.Cabins.Select( c =>  c.CabinAddress ).ToList();
         }
         private void btnLogin_Click(object sender, EventArgs e)
