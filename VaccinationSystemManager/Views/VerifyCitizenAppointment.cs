@@ -38,6 +38,8 @@ namespace VaccinationSystemManager.Views
             //Check if user has an appointment based on counter
             if (countUser >= 1)
             {
+                bool alreadyVaccinated = true;
+
                 Model.Citizen newCitizen = new Model.Citizen();
 
                 newCitizen = db.Citizens
@@ -53,6 +55,17 @@ namespace VaccinationSystemManager.Views
                         .Where(u => u.DuiCitizen == newCitizen.Dui)
                         .Where(u => u.ShotType == 1)
                         .FirstOrDefault();
+
+                    //check vaccine
+                    var countVaccine = db.VaccinationProcesses
+                        .Where(u => u.DuiCitizen == newCitizen.Dui)
+                        .Where(u => u.ShotType == 1)
+                        .Count();
+
+                    if (countVaccine == 0)
+                    {
+                        alreadyVaccinated = false;
+                    }
                 }
 
                 //Check for shot type 2 based on counter
@@ -62,56 +75,77 @@ namespace VaccinationSystemManager.Views
                         .Where(u => u.DuiCitizen == newCitizen.Dui)
                         .Where(u => u.ShotType == 2)
                         .FirstOrDefault();
+
+                    //check vaccine
+                    var countVaccine = db.VaccinationProcesses
+                        .Where(u => u.DuiCitizen == newCitizen.Dui)
+                        .Where(u => u.ShotType == 2)
+                        .Count();
+
+                    if (countVaccine == 0)
+                    {
+                        alreadyVaccinated = false;
+                    }
                 }
 
-                var days = ((DateTime.Now - checkAppointment.AppointmentDate).Days);
-
-                //Day of the appointment
-                if (days == 0)
+                //Verify if the user has alredy been vaccinated
+                if (alreadyVaccinated == false)
                 {
-                    var hours = ((checkAppointment.AppointmentDate - DateTime.Now).Hours);
+                    var days = ((DateTime.Now - checkAppointment.AppointmentDate).Days);
 
-                    //Exact hour or a later
-                    if (hours <= 0)
+                    //Day of the appointment
+                    if (days == 0)
                     {
-                        //Start Vaccination Process
-                        frmStartVaccinationProcess StartVaccination = new frmStartVaccinationProcess(newCitizen, checkAppointment);
-                        StartVaccination.Show();
+                        var hours = ((checkAppointment.AppointmentDate - DateTime.Now).Hours);
 
-                        this.Hide();
+                        //Exact hour or a later
+                        if (hours <= 0)
+                        {
+                            //Start Vaccination Process
+                            frmStartVaccinationProcess StartVaccination = new frmStartVaccinationProcess(newCitizen, checkAppointment);
+                            StartVaccination.Show();
 
-                        //this.Close();
+                            this.Hide();
+
+                            //this.Close();
+                        }
+                        //Too early (hours > 0)
+                        else
+                        {
+                            var minutes = ((DateTime.Now - checkAppointment.AppointmentDate).Minutes);
+
+                            MessageBox.Show($"La cita iniciará dentro de {hours} horas, es necesario esperar este tiempo para iniciar el proceso de vacunación",
+                            "Vacunación COVID-19",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-                    //Too early (hours > 0)
+                    //Not yet the date of the appointment
+                    else if (days < 0)
+                    {
+                        MessageBox.Show($"La cita está agendada dentro de {(days * -1)} días, aún no puede iniciar el proceso de vacunación",
+                            "Vacunación COVID-19",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    //The day of the appointment has passed (days > 0)
                     else
                     {
-                        var minutes = ((DateTime.Now - checkAppointment.AppointmentDate).Minutes);
+                        MessageBox.Show($"La cita caducó hace {days} días, es necesario agendar una nueva cita para iniciar el proceso de vacunación",
+                            "Vacunación COVID-19",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        MessageBox.Show($"La cita iniciará dentro de {hours} horas, es necesario esperar este tiempo para iniciar el proceso de vacunación",
-                        "Vacunación COVID-19",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Delete previus appointment in order to avoid future confilcs
+                        db.Remove(db.Appointments.SingleOrDefault(u => u.Id == checkAppointment.Id));
+                        db.SaveChanges();
+
+                        this.Close();
+                        //redireccionar a la ventana "agendar citas"
                     }
                 }
-                //Not yet the date of the appointment
-                else if (days < 0)
-                {
-                    MessageBox.Show($"La cita está agendada dentro de {(days * -1)} días, aún no puede iniciar el proceso de vacunación",
-                        "Vacunación COVID-19",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                //The day of the appointment has passed (days > 0)
                 else
                 {
-                    MessageBox.Show($"La cita caducó hace {days} días, es necesario agendar una nueva cita para iniciar el proceso de vacunación",
-                        "Vacunación COVID-19",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //Delete previus appointment in order to avoid future confilcs
-                    db.Remove(db.Appointments.SingleOrDefault(u => u.Id == checkAppointment.Id));
-                    db.SaveChanges();
-
-                    this.Close();
-                    //redireccionar a la ventana "agendar citas"
+                    MessageBox.Show($"El ciudadano ya ha sido vacunado con anterioridad, dosis tipo: {checkAppointment.ShotType}",
+                    "Vacunación COVID-19",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
