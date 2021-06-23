@@ -37,13 +37,13 @@ namespace VaccinationSystemManager.Model
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS; Database=G4ProyectoDB;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=DESKTOP-PQ2DCM4\\SQLEXPRESS;Database=G4ProyectoDB;Trusted_Connection=True;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+            modelBuilder.HasAnnotation("Relational:Collation", "Modern_Spanish_CI_AS");
 
             modelBuilder.Entity<Appointment>(entity =>
             {
@@ -121,7 +121,7 @@ namespace VaccinationSystemManager.Model
             modelBuilder.Entity<Citizen>(entity =>
             {
                 entity.HasKey(e => e.Dui)
-                    .HasName("PK__CITIZEN__D876F1BE891E3BA5");
+                    .HasName("PK__CITIZEN__D876F1BE29DA0C18");
 
                 entity.ToTable("CITIZEN");
 
@@ -143,7 +143,7 @@ namespace VaccinationSystemManager.Model
                     .HasColumnName("citizen_name");
 
                 entity.Property(e => e.EMail)
-                    .HasMaxLength(25)
+                    .HasMaxLength(100)
                     .IsUnicode(false)
                     .HasColumnName("e_mail");
 
@@ -307,14 +307,15 @@ namespace VaccinationSystemManager.Model
 
             modelBuilder.Entity<PresentedSideEffect>(entity =>
             {
-                entity.HasKey(e => new { e.IdVaccinationProcess, e.IdSideEffect })
-                    .HasName("PK_presented_side_effect");
-
                 entity.ToTable("PRESENTED_SIDE_EFFECT");
 
-                entity.Property(e => e.IdVaccinationProcess).HasColumnName("id_vaccination_process");
+                entity.Property(e => e.Id).HasColumnName("id");
+
+                entity.Property(e => e.AppearanceTime).HasColumnName("appearance_time");
 
                 entity.Property(e => e.IdSideEffect).HasColumnName("id_side_effect");
+
+                entity.Property(e => e.IdVaccinationProcess).HasColumnName("id_vaccination_process");
 
                 entity.HasOne(d => d.IdSideEffectNavigation)
                     .WithMany(p => p.PresentedSideEffects)
@@ -406,7 +407,7 @@ namespace VaccinationSystemManager.Model
 
                 entity.Property(e => e.ShotType).HasColumnName("shot_type");
 
-                entity.Property(e => e.StartTiem).HasColumnName("start_tiem");
+                entity.Property(e => e.StartTime).HasColumnName("start_time");
 
                 entity.Property(e => e.VaccinationDate)
                     .HasColumnType("date")

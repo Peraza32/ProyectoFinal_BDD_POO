@@ -14,7 +14,7 @@ namespace VaccinationSystemManager.Model
 
         public int Id { get; set; }
         public DateTime VaccinationDate { get; set; }
-        public TimeSpan StartTiem { get; set; }
+        public TimeSpan StartTime { get; set; }
         public TimeSpan VaccinationTime { get; set; }
         public TimeSpan EndTime { get; set; }
         public int ShotType { get; set; }
