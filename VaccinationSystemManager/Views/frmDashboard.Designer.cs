@@ -1,7 +1,7 @@
 ﻿
 namespace VaccinationSystemManager.Views
 {
-    partial class Dashboard
+    partial class frmDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -63,6 +63,7 @@ namespace VaccinationSystemManager.Views
             this.btnVacProcess.TabIndex = 2;
             this.btnVacProcess.Text = "Proceso de vacunación";
             this.btnVacProcess.UseVisualStyleBackColor = true;
+            this.btnVacProcess.Click += new System.EventHandler(this.btnVacProcess_Click);
             // 
             // btnShowAppointments
             // 
@@ -82,7 +83,7 @@ namespace VaccinationSystemManager.Views
             this.lblCurrenEmployee.TabIndex = 4;
             this.lblCurrenEmployee.Text = "label1";
             // 
-            // Dashboard
+            // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,7 +93,7 @@ namespace VaccinationSystemManager.Views
             this.Controls.Add(this.btnVacProcess);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnAppointment);
-            this.Name = "Dashboard";
+            this.Name = "frmDashboard";
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.ResumeLayout(false);

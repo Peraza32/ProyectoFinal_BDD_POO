@@ -12,8 +12,10 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmVerifyCitizen : Form
     {
-        public frmVerifyCitizen()
+        frmDashboard dashboard;
+        public frmVerifyCitizen(frmDashboard dash)
         {
+            dashboard = dash;
             InitializeComponent();
         }
 
@@ -102,7 +104,7 @@ namespace VaccinationSystemManager.Views
                         if (hours <= 0)
                         {
                             //Start Vaccination Process
-                            frmStartVaccinationProcess StartVaccination = new frmStartVaccinationProcess(newCitizen, checkAppointment);
+                            frmStartVaccinationProcess StartVaccination = new frmStartVaccinationProcess(newCitizen, checkAppointment, dashboard);
                             StartVaccination.Show();
 
                             this.Hide();
@@ -162,8 +164,9 @@ namespace VaccinationSystemManager.Views
 
         private void btnVerifyCitizenCancel_Click(object sender, EventArgs e)
         {
+            dashboard.Show();
             this.Close();
-            //Devolver al Dashboard
+        
         }
     }
 }

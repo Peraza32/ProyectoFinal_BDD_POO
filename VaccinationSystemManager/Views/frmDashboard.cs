@@ -13,25 +13,32 @@ using VaccinationSystemManager.Model;
 
 namespace VaccinationSystemManager.Views
 {
-    public partial class Dashboard : Form
+    public partial class frmDashboard : Form
     {
-        Employee loggedEmployee;
-        public Dashboard(Employee currentEmployee)
+        public Employee LoggedEmployee { get; }
+        public frmDashboard(Employee currentEmployee)
         {
-            loggedEmployee = currentEmployee;
+            LoggedEmployee = currentEmployee;
             InitializeComponent();
         }
 
         private void btnAppointment_Click(object sender, EventArgs e)
         {
-            frmAppointmentProcess appointmentClient = new frmAppointmentProcess(loggedEmployee, this);
+            frmAppointmentProcess appointmentClient = new frmAppointmentProcess(this);
             appointmentClient.Show();
             Hide();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            lblCurrenEmployee.Text = loggedEmployee.EmployeeName;
+            lblCurrenEmployee.Text = LoggedEmployee.EmployeeName;
+        }
+
+        private void btnVacProcess_Click(object sender, EventArgs e)
+        {
+            frmVerifyCitizen frmVerify = new frmVerifyCitizen(this);
+            frmVerify.Show();
+            Hide();
         }
     }
 }

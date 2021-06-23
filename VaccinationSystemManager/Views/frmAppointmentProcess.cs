@@ -15,12 +15,10 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmAppointmentProcess : Form
     {
-        public Form dashboard;
-        Employee loggedEmployee;
-        public frmAppointmentProcess(Employee currentEmployee, Form lastForm)
+        frmDashboard dashboard;
+        public frmAppointmentProcess(frmDashboard lastForm)
         {
             dashboard = lastForm;
-            loggedEmployee = currentEmployee;
             InitializeComponent();
         }
 
@@ -192,11 +190,14 @@ namespace VaccinationSystemManager.Views
                 MessageBox.Show("Usuario registrado con éxito", "Vacunación COVID-19",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                Random r = new Random();
+                int idVacCenter = r.Next(1, 7);
+
                 AppointmentMaker appointmentManager = new AppointmentMaker(db);
 
-                Appointment createdAppointment = appointmentManager.MakeAppointment( db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault(), newCitizen, loggedEmployee );
+                Appointment createdAppointment = appointmentManager.MakeAppointment( db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault(), newCitizen, dashboard.LoggedEmployee, idVacCenter );
 
-                frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(createdAppointment, this);
+                frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(createdAppointment, dashboard);
                 frmAppointmentProcessDetails.Show();
                 Hide();
             }

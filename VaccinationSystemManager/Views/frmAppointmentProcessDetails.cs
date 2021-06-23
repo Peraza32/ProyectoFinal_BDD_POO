@@ -13,7 +13,7 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmAppointmentProcessDetails : Form
     {
-        frmAppointmentProcess refAppointmentProcess = null;
+        frmDashboard dashboard;
         string dui;
         string name;
         string date;
@@ -23,10 +23,12 @@ namespace VaccinationSystemManager.Views
         VaccinationCenter vaccinationCenter;
         DoseType doseType;
 
-        public frmAppointmentProcessDetails(Appointment anAppointment, frmAppointmentProcess frmAppointmentProcess)
+        public frmAppointmentProcessDetails(Appointment anAppointment, frmDashboard dash)
         {
             InitializeComponent();
             var db = new G4ProyectoDBContext();
+
+            dashboard = dash;
 
             // recovers the citizen from BDD
             citizen = db.Citizens.SingleOrDefault(c => c.Dui == anAppointment.DuiCitizen);
@@ -36,8 +38,6 @@ namespace VaccinationSystemManager.Views
 
             // recovers the dose type from BDD
             doseType = db.DoseTypes.SingleOrDefault(dt => dt.Id == anAppointment.ShotType);
-
-            refAppointmentProcess = frmAppointmentProcess;
 
             dui = anAppointment.DuiCitizen;
             name = citizen.CitizenName;
@@ -61,7 +61,7 @@ namespace VaccinationSystemManager.Views
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            refAppointmentProcess.dashboard.Show();
+            dashboard.Show();
             Close();
         }
     }

@@ -42,7 +42,7 @@ namespace VaccinationSystemManager.Views
             this.lblVerifyCitizenTitle.Location = new System.Drawing.Point(67, 65);
             this.lblVerifyCitizenTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblVerifyCitizenTitle.Name = "lblVerifyCitizenTitle";
-            this.lblVerifyCitizenTitle.Size = new System.Drawing.Size(442, 26);
+            this.lblVerifyCitizenTitle.Size = new System.Drawing.Size(583, 34);
             this.lblVerifyCitizenTitle.TabIndex = 0;
             this.lblVerifyCitizenTitle.Text = "¡Veamos si ya llegó tu momento para vacunarte!";
             // 
@@ -51,7 +51,7 @@ namespace VaccinationSystemManager.Views
             this.lblVerifyCitizenDUI.AutoSize = true;
             this.lblVerifyCitizenDUI.Location = new System.Drawing.Point(173, 186);
             this.lblVerifyCitizenDUI.Name = "lblVerifyCitizenDUI";
-            this.lblVerifyCitizenDUI.Size = new System.Drawing.Size(240, 26);
+            this.lblVerifyCitizenDUI.Size = new System.Drawing.Size(314, 34);
             this.lblVerifyCitizenDUI.TabIndex = 1;
             this.lblVerifyCitizenDUI.Text = "Ingresa tu número de DUI";
             // 
@@ -60,7 +60,7 @@ namespace VaccinationSystemManager.Views
             this.txtVerifyCitizenDUI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.txtVerifyCitizenDUI.Location = new System.Drawing.Point(123, 227);
             this.txtVerifyCitizenDUI.Name = "txtVerifyCitizenDUI";
-            this.txtVerifyCitizenDUI.Size = new System.Drawing.Size(338, 31);
+            this.txtVerifyCitizenDUI.Size = new System.Drawing.Size(338, 37);
             this.txtVerifyCitizenDUI.TabIndex = 2;
             this.txtVerifyCitizenDUI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVerifyCitizenDUI_KeyPress);
             // 
@@ -94,10 +94,10 @@ namespace VaccinationSystemManager.Views
             // 
             // frmVerifyCitizen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(574, 506);
+            this.ClientSize = new System.Drawing.Size(695, 506);
             this.Controls.Add(this.btnVerifyCitizenSearch);
             this.Controls.Add(this.btnVerifyCitizenCancel);
             this.Controls.Add(this.txtVerifyCitizenDUI);

@@ -96,7 +96,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationDUI.AutoSize = true;
             this.lblStartVaccinationDUI.Location = new System.Drawing.Point(59, 171);
             this.lblStartVaccinationDUI.Name = "lblStartVaccinationDUI";
-            this.lblStartVaccinationDUI.Size = new System.Drawing.Size(44, 26);
+            this.lblStartVaccinationDUI.Size = new System.Drawing.Size(56, 34);
             this.lblStartVaccinationDUI.TabIndex = 8;
             this.lblStartVaccinationDUI.Text = "DUI";
             // 
@@ -105,7 +105,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationName.AutoSize = true;
             this.lblStartVaccinationName.Location = new System.Drawing.Point(59, 261);
             this.lblStartVaccinationName.Name = "lblStartVaccinationName";
-            this.lblStartVaccinationName.Size = new System.Drawing.Size(173, 26);
+            this.lblStartVaccinationName.Size = new System.Drawing.Size(226, 34);
             this.lblStartVaccinationName.TabIndex = 9;
             this.lblStartVaccinationName.Text = "Nombre completo";
             // 
@@ -114,7 +114,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationAddress.AutoSize = true;
             this.lblStartVaccinationAddress.Location = new System.Drawing.Point(59, 353);
             this.lblStartVaccinationAddress.Name = "lblStartVaccinationAddress";
-            this.lblStartVaccinationAddress.Size = new System.Drawing.Size(96, 26);
+            this.lblStartVaccinationAddress.Size = new System.Drawing.Size(125, 34);
             this.lblStartVaccinationAddress.TabIndex = 10;
             this.lblStartVaccinationAddress.Text = "Dirección";
             // 
@@ -123,7 +123,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationPhone.AutoSize = true;
             this.lblStartVaccinationPhone.Location = new System.Drawing.Point(434, 353);
             this.lblStartVaccinationPhone.Name = "lblStartVaccinationPhone";
-            this.lblStartVaccinationPhone.Size = new System.Drawing.Size(190, 26);
+            this.lblStartVaccinationPhone.Size = new System.Drawing.Size(248, 34);
             this.lblStartVaccinationPhone.TabIndex = 11;
             this.lblStartVaccinationPhone.Text = "Número de teléfono";
             // 
@@ -132,7 +132,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationMail.AutoSize = true;
             this.lblStartVaccinationMail.Location = new System.Drawing.Point(59, 448);
             this.lblStartVaccinationMail.Name = "lblStartVaccinationMail";
-            this.lblStartVaccinationMail.Size = new System.Drawing.Size(175, 26);
+            this.lblStartVaccinationMail.Size = new System.Drawing.Size(227, 34);
             this.lblStartVaccinationMail.TabIndex = 12;
             this.lblStartVaccinationMail.Text = "Correo electrónico";
             // 
@@ -141,7 +141,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationDisease.AutoSize = true;
             this.lblStartVaccinationDisease.Location = new System.Drawing.Point(59, 536);
             this.lblStartVaccinationDisease.Name = "lblStartVaccinationDisease";
-            this.lblStartVaccinationDisease.Size = new System.Drawing.Size(222, 26);
+            this.lblStartVaccinationDisease.Size = new System.Drawing.Size(290, 34);
             this.lblStartVaccinationDisease.TabIndex = 13;
             this.lblStartVaccinationDisease.Text = "Enfermedades crónicas";
             // 
@@ -150,7 +150,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationDisabilities.AutoSize = true;
             this.lblStartVaccinationDisabilities.Location = new System.Drawing.Point(434, 536);
             this.lblStartVaccinationDisabilities.Name = "lblStartVaccinationDisabilities";
-            this.lblStartVaccinationDisabilities.Size = new System.Drawing.Size(153, 26);
+            this.lblStartVaccinationDisabilities.Size = new System.Drawing.Size(201, 34);
             this.lblStartVaccinationDisabilities.TabIndex = 14;
             this.lblStartVaccinationDisabilities.Text = "Discapacidades";
             // 
@@ -159,7 +159,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationIdentifier.AutoSize = true;
             this.lblStartVaccinationIdentifier.Location = new System.Drawing.Point(434, 448);
             this.lblStartVaccinationIdentifier.Name = "lblStartVaccinationIdentifier";
-            this.lblStartVaccinationIdentifier.Size = new System.Drawing.Size(236, 26);
+            this.lblStartVaccinationIdentifier.Size = new System.Drawing.Size(312, 34);
             this.lblStartVaccinationIdentifier.TabIndex = 15;
             this.lblStartVaccinationIdentifier.Text = "Número de identificación";
             // 
@@ -168,7 +168,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationDose.AutoSize = true;
             this.lblStartVaccinationDose.Location = new System.Drawing.Point(59, 643);
             this.lblStartVaccinationDose.Name = "lblStartVaccinationDose";
-            this.lblStartVaccinationDose.Size = new System.Drawing.Size(128, 26);
+            this.lblStartVaccinationDose.Size = new System.Drawing.Size(167, 34);
             this.lblStartVaccinationDose.TabIndex = 16;
             this.lblStartVaccinationDose.Text = "Tipo de dosis";
             // 
@@ -177,7 +177,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationDate.AutoSize = true;
             this.lblStartVaccinationDate.Location = new System.Drawing.Point(434, 643);
             this.lblStartVaccinationDate.Name = "lblStartVaccinationDate";
-            this.lblStartVaccinationDate.Size = new System.Drawing.Size(66, 26);
+            this.lblStartVaccinationDate.Size = new System.Drawing.Size(86, 34);
             this.lblStartVaccinationDate.TabIndex = 17;
             this.lblStartVaccinationDate.Text = "Fecha";
             // 
@@ -186,7 +186,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationStart.AutoSize = true;
             this.lblStartVaccinationStart.Location = new System.Drawing.Point(59, 755);
             this.lblStartVaccinationStart.Name = "lblStartVaccinationStart";
-            this.lblStartVaccinationStart.Size = new System.Drawing.Size(133, 26);
+            this.lblStartVaccinationStart.Size = new System.Drawing.Size(176, 34);
             this.lblStartVaccinationStart.TabIndex = 18;
             this.lblStartVaccinationStart.Text = "Hora de inicio";
             // 
@@ -195,7 +195,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationVaccine.AutoSize = true;
             this.lblStartVaccinationVaccine.Location = new System.Drawing.Point(314, 755);
             this.lblStartVaccinationVaccine.Name = "lblStartVaccinationVaccine";
-            this.lblStartVaccinationVaccine.Size = new System.Drawing.Size(186, 26);
+            this.lblStartVaccinationVaccine.Size = new System.Drawing.Size(247, 34);
             this.lblStartVaccinationVaccine.TabIndex = 19;
             this.lblStartVaccinationVaccine.Text = "Hora de vacunación";
             // 
@@ -204,7 +204,7 @@ namespace VaccinationSystemManager.Views
             this.lblStartVaccinationEnd.AutoSize = true;
             this.lblStartVaccinationEnd.Location = new System.Drawing.Point(567, 755);
             this.lblStartVaccinationEnd.Name = "lblStartVaccinationEnd";
-            this.lblStartVaccinationEnd.Size = new System.Drawing.Size(187, 26);
+            this.lblStartVaccinationEnd.Size = new System.Drawing.Size(248, 34);
             this.lblStartVaccinationEnd.TabIndex = 20;
             this.lblStartVaccinationEnd.Text = "Hora de finalización";
             // 
@@ -213,7 +213,7 @@ namespace VaccinationSystemManager.Views
             this.txtStartVaccinationDUI.Enabled = false;
             this.txtStartVaccinationDUI.Location = new System.Drawing.Point(59, 200);
             this.txtStartVaccinationDUI.Name = "txtStartVaccinationDUI";
-            this.txtStartVaccinationDUI.Size = new System.Drawing.Size(397, 31);
+            this.txtStartVaccinationDUI.Size = new System.Drawing.Size(397, 37);
             this.txtStartVaccinationDUI.TabIndex = 21;
             // 
             // txtStartVaccinationName
@@ -221,7 +221,7 @@ namespace VaccinationSystemManager.Views
             this.txtStartVaccinationName.Enabled = false;
             this.txtStartVaccinationName.Location = new System.Drawing.Point(59, 290);
             this.txtStartVaccinationName.Name = "txtStartVaccinationName";
-            this.txtStartVaccinationName.Size = new System.Drawing.Size(397, 31);
+            this.txtStartVaccinationName.Size = new System.Drawing.Size(397, 37);
             this.txtStartVaccinationName.TabIndex = 22;
             // 
             // txtStartVaccinationAddress
@@ -229,7 +229,7 @@ namespace VaccinationSystemManager.Views
             this.txtStartVaccinationAddress.Enabled = false;
             this.txtStartVaccinationAddress.Location = new System.Drawing.Point(59, 382);
             this.txtStartVaccinationAddress.Name = "txtStartVaccinationAddress";
-            this.txtStartVaccinationAddress.Size = new System.Drawing.Size(320, 31);
+            this.txtStartVaccinationAddress.Size = new System.Drawing.Size(320, 37);
             this.txtStartVaccinationAddress.TabIndex = 23;
             // 
             // txtStartVaccinationPhone
@@ -237,7 +237,7 @@ namespace VaccinationSystemManager.Views
             this.txtStartVaccinationPhone.Enabled = false;
             this.txtStartVaccinationPhone.Location = new System.Drawing.Point(434, 382);
             this.txtStartVaccinationPhone.Name = "txtStartVaccinationPhone";
-            this.txtStartVaccinationPhone.Size = new System.Drawing.Size(320, 31);
+            this.txtStartVaccinationPhone.Size = new System.Drawing.Size(320, 37);
             this.txtStartVaccinationPhone.TabIndex = 24;
             // 
             // txtStartVaccinationMail
@@ -245,7 +245,7 @@ namespace VaccinationSystemManager.Views
             this.txtStartVaccinationMail.Enabled = false;
             this.txtStartVaccinationMail.Location = new System.Drawing.Point(59, 477);
             this.txtStartVaccinationMail.Name = "txtStartVaccinationMail";
-            this.txtStartVaccinationMail.Size = new System.Drawing.Size(320, 31);
+            this.txtStartVaccinationMail.Size = new System.Drawing.Size(320, 37);
             this.txtStartVaccinationMail.TabIndex = 25;
             // 
             // txtStartVaccinationDisease
@@ -253,7 +253,7 @@ namespace VaccinationSystemManager.Views
             this.txtStartVaccinationDisease.Enabled = false;
             this.txtStartVaccinationDisease.Location = new System.Drawing.Point(59, 577);
             this.txtStartVaccinationDisease.Name = "txtStartVaccinationDisease";
-            this.txtStartVaccinationDisease.Size = new System.Drawing.Size(320, 31);
+            this.txtStartVaccinationDisease.Size = new System.Drawing.Size(320, 37);
             this.txtStartVaccinationDisease.TabIndex = 26;
             // 
             // txtStartVaccinationDisability
@@ -261,7 +261,7 @@ namespace VaccinationSystemManager.Views
             this.txtStartVaccinationDisability.Enabled = false;
             this.txtStartVaccinationDisability.Location = new System.Drawing.Point(434, 577);
             this.txtStartVaccinationDisability.Name = "txtStartVaccinationDisability";
-            this.txtStartVaccinationDisability.Size = new System.Drawing.Size(320, 31);
+            this.txtStartVaccinationDisability.Size = new System.Drawing.Size(320, 37);
             this.txtStartVaccinationDisability.TabIndex = 27;
             // 
             // txtStartVaccinationIdentifier
@@ -269,7 +269,7 @@ namespace VaccinationSystemManager.Views
             this.txtStartVaccinationIdentifier.Enabled = false;
             this.txtStartVaccinationIdentifier.Location = new System.Drawing.Point(434, 477);
             this.txtStartVaccinationIdentifier.Name = "txtStartVaccinationIdentifier";
-            this.txtStartVaccinationIdentifier.Size = new System.Drawing.Size(320, 31);
+            this.txtStartVaccinationIdentifier.Size = new System.Drawing.Size(320, 37);
             this.txtStartVaccinationIdentifier.TabIndex = 28;
             // 
             // dtpStartVaccinationDate
@@ -278,7 +278,7 @@ namespace VaccinationSystemManager.Views
             this.dtpStartVaccinationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpStartVaccinationDate.Location = new System.Drawing.Point(434, 675);
             this.dtpStartVaccinationDate.Name = "dtpStartVaccinationDate";
-            this.dtpStartVaccinationDate.Size = new System.Drawing.Size(320, 31);
+            this.dtpStartVaccinationDate.Size = new System.Drawing.Size(320, 37);
             this.dtpStartVaccinationDate.TabIndex = 35;
             // 
             // dtpStartVaccinationStart
@@ -289,7 +289,7 @@ namespace VaccinationSystemManager.Views
             this.dtpStartVaccinationStart.Location = new System.Drawing.Point(59, 784);
             this.dtpStartVaccinationStart.Name = "dtpStartVaccinationStart";
             this.dtpStartVaccinationStart.ShowUpDown = true;
-            this.dtpStartVaccinationStart.Size = new System.Drawing.Size(200, 31);
+            this.dtpStartVaccinationStart.Size = new System.Drawing.Size(200, 37);
             this.dtpStartVaccinationStart.TabIndex = 36;
             // 
             // dtpStartVaccinationVaccine
@@ -298,7 +298,7 @@ namespace VaccinationSystemManager.Views
             this.dtpStartVaccinationVaccine.Location = new System.Drawing.Point(314, 784);
             this.dtpStartVaccinationVaccine.Name = "dtpStartVaccinationVaccine";
             this.dtpStartVaccinationVaccine.ShowUpDown = true;
-            this.dtpStartVaccinationVaccine.Size = new System.Drawing.Size(200, 31);
+            this.dtpStartVaccinationVaccine.Size = new System.Drawing.Size(200, 37);
             this.dtpStartVaccinationVaccine.TabIndex = 37;
             // 
             // dtpStartVaccinationEnd
@@ -307,7 +307,7 @@ namespace VaccinationSystemManager.Views
             this.dtpStartVaccinationEnd.Location = new System.Drawing.Point(554, 784);
             this.dtpStartVaccinationEnd.Name = "dtpStartVaccinationEnd";
             this.dtpStartVaccinationEnd.ShowUpDown = true;
-            this.dtpStartVaccinationEnd.Size = new System.Drawing.Size(200, 31);
+            this.dtpStartVaccinationEnd.Size = new System.Drawing.Size(200, 37);
             this.dtpStartVaccinationEnd.TabIndex = 38;
             // 
             // txtStartVaccinationDose
@@ -315,7 +315,7 @@ namespace VaccinationSystemManager.Views
             this.txtStartVaccinationDose.Enabled = false;
             this.txtStartVaccinationDose.Location = new System.Drawing.Point(59, 673);
             this.txtStartVaccinationDose.Name = "txtStartVaccinationDose";
-            this.txtStartVaccinationDose.Size = new System.Drawing.Size(320, 31);
+            this.txtStartVaccinationDose.Size = new System.Drawing.Size(320, 37);
             this.txtStartVaccinationDose.TabIndex = 39;
             // 
             // pictureBox1
@@ -334,18 +334,18 @@ namespace VaccinationSystemManager.Views
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(191, 120);
+            this.label9.Location = new System.Drawing.Point(203, 120);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(396, 31);
+            this.label9.Size = new System.Drawing.Size(493, 39);
             this.label9.TabIndex = 41;
             this.label9.Text = "PROCESO DE VACUNACIÓN";
             // 
             // frmStartVaccinationProcess
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(796, 970);
+            this.ClientSize = new System.Drawing.Size(821, 970);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtStartVaccinationDose);

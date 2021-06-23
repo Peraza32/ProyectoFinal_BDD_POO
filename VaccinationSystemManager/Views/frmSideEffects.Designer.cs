@@ -82,9 +82,9 @@ namespace VaccinationSystemManager.Views
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(110, 184);
+            this.label9.Location = new System.Drawing.Point(150, 173);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(363, 22);
+            this.label9.Size = new System.Drawing.Size(284, 45);
             this.label9.TabIndex = 44;
             this.label9.Text = "REGISTRAR EFECTOS SECUNDARIOS";
             // 
@@ -183,9 +183,9 @@ namespace VaccinationSystemManager.Views
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Franklin Gothic Medium", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(92, 5);
+            this.label8.Location = new System.Drawing.Point(92, 2);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 25);
+            this.label8.Size = new System.Drawing.Size(56, 32);
             this.label8.TabIndex = 48;
             this.label8.Text = "min";
             // 
@@ -206,7 +206,7 @@ namespace VaccinationSystemManager.Views
             0,
             0});
             this.nudAppearanceTime.Name = "nudAppearanceTime";
-            this.nudAppearanceTime.Size = new System.Drawing.Size(74, 29);
+            this.nudAppearanceTime.Size = new System.Drawing.Size(74, 34);
             this.nudAppearanceTime.TabIndex = 46;
             this.nudAppearanceTime.Value = new decimal(new int[] {
             1,
@@ -220,9 +220,9 @@ namespace VaccinationSystemManager.Views
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(52, 9);
+            this.label7.Location = new System.Drawing.Point(4, 6);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(176, 24);
+            this.label7.Size = new System.Drawing.Size(224, 30);
             this.label7.TabIndex = 46;
             this.label7.Text = "Tiempo de aparición";
             // 
@@ -232,9 +232,9 @@ namespace VaccinationSystemManager.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(61, 249);
+            this.label1.Location = new System.Drawing.Point(61, 245);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(198, 26);
+            this.label1.Size = new System.Drawing.Size(258, 34);
             this.label1.TabIndex = 47;
             this.label1.Text = "Seleccione un efecto";
             // 
@@ -245,12 +245,12 @@ namespace VaccinationSystemManager.Views
             this.cmbSideEffectsList.FormattingEnabled = true;
             this.cmbSideEffectsList.Location = new System.Drawing.Point(61, 282);
             this.cmbSideEffectsList.Name = "cmbSideEffectsList";
-            this.cmbSideEffectsList.Size = new System.Drawing.Size(462, 32);
+            this.cmbSideEffectsList.Size = new System.Drawing.Size(462, 38);
             this.cmbSideEffectsList.TabIndex = 48;
             // 
             // frmSideEffects
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(595, 555);
