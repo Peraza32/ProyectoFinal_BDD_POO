@@ -87,9 +87,22 @@ namespace VaccinationSystemManager.Views
                             "Vacunación COVID-19",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        this.Close();
+                        //Check if it's necesary to schedule a new appointment for dose 2
+                        if (vaccinationProcess.ShotType == 1)
+                        {
+                            MessageBox.Show("Agendando cita para la segunda dosis",
+                            "Vacunación COVID-19",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        //Devolver al Dashboard
+                            //Proceso de agenda
+                            //Devolver al Dashboard
+                            this.Close();
+                        }
+                        else
+                        {
+                            this.Close();
+                            //Devolver al Dashboard
+                        }
                     }
                     else
                     {
