@@ -44,7 +44,12 @@ namespace VaccinationSystemManager
                 //creates the proxy to do the login
                 LoginProxy login = new LoginProxy(txtUsername.Text, txtPassword.Text, usernameValidation, db, db.Cabins.Where(c => c.CabinAddress == cboCabin.Text).FirstOrDefault());
                 //once the validators have passed it proceeds to sign in
-                login.SignIn();
+                if (login.SignIn())
+                {
+                    Views.Dashboard dashboard = new Views.Dashboard(db.Employees.Where(e => e.EmployeeUser == txtUsername.Text).FirstOrDefault());
+                    Hide();
+                    dashboard.ShowDialog();
+                }
             }
             catch(FormInputException frmEx)
             {

@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using VaccinationSystemManager.Model;
 
-namespace VaccinationSystemManager.Controller
+namespace VaccinationSystemManager.Controller.AppointmentController
 {
     interface IAppointment
     {
-        public bool MakeAppointment(DoseType dose);
+        public Model.Appointment MakeAppointment(DoseType shotType, Citizen person, Employee manager);
     }
 }

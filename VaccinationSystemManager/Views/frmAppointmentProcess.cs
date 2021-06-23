@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VaccinationSystemManager.Model;
+using VaccinationSystemManager.Controller;
+using VaccinationSystemManager.Controller.AppointmentController;
 
 namespace VaccinationSystemManager.Views
 {
     public partial class frmAppointmentProcess : Form
     {
-        public frmAppointmentProcess()
+        public Form dashboard;
+        Employee loggedEmployee;
+        public frmAppointmentProcess(Employee currentEmployee, Form lastForm)
         {
+            dashboard = lastForm;
+            loggedEmployee = currentEmployee;
             InitializeComponent();
         }
 
@@ -45,7 +51,7 @@ namespace VaccinationSystemManager.Views
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            var db = new Model.G4ProyectoDBContext();
+            var db = new G4ProyectoDBContext();
 
             // stores the dui of the citizen
             string dui = txtDui.Text;
@@ -185,6 +191,14 @@ namespace VaccinationSystemManager.Views
 
                 MessageBox.Show("Usuario registrado con éxito", "Vacunación COVID-19",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                AppointmentMaker appointmentManager = new AppointmentMaker(db);
+
+                Appointment createdAppointment = appointmentManager.MakeAppointment( db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault(), newCitizen, loggedEmployee );
+
+                frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(createdAppointment, this);
+                frmAppointmentProcessDetails.Show();
+                Hide();
             }
             else
             {
@@ -203,84 +217,14 @@ namespace VaccinationSystemManager.Views
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }  
             }
+            
 
-            // ASIGNAMOS UN CENTRO DE VACUNACIÓN AL USUARIO
-
-            // generamos un número aleatorio entre 1 y 6
-            Random r = new Random();
-            int idVaccinationCenter = r.Next(1, 7);
-
-            // buscamos el centro de vacunación en la base de datos usando
-            // el número aleatorio generado como id del centro de vacunación
-            VaccinationCenter vaccinationCenterBDD = db.Set<VaccinationCenter>()
-                .SingleOrDefault(vc => vc.Id == idVaccinationCenter);
-
-            // ASIGNAMOS UNA FECHA Y HORA DE VACUNACIÓN AL USUARIO
-
-            // variable que nos permite controlar el bucle
-            bool next = true;
-            // acumuladores que nos permiten asignar una fecha y hora de vacunación
-            int days = 1;
-            int hours = 8;
-            DateTime appointmentDate;
-            Appointment newAppointment = new Appointment();
-
-            while (next)
-            {
-                // tomamos como fecha base la fecha actual
-                DateTime baseDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0, .000);
-                // a la fecha base le vamos sumando 1 hora o 1 día según se vaya agotando la disponibilidad
-                // de cupos en el centro de vacunación asignado
-                appointmentDate = baseDate.AddDays(days).AddHours(hours).AddMinutes(0).AddSeconds(0).AddMilliseconds(.000);
-
-                // recuperamos una lista de las reservas realizadas en la hora y centro de vacunación
-                // generado para el ciudadano
-                var totalAppointments = db.Appointments
-                    .Where(ap => ap.AppointmentDate == appointmentDate && ap.IdCenter == idVaccinationCenter)
-                    .ToList();
-
-                // comparamos que existan cupos disponibles
-                if ( (vaccinationCenterBDD.Capacity - totalAppointments.Count) > 0)
-                {
-                    // saves the new appointment in the database
-                    newAppointment.AppointmentDate = appointmentDate;
-                    newAppointment.ShotType = 1;
-                    newAppointment.IdCenter = idVaccinationCenter;
-                    newAppointment.DuiCitizen = txtDui.Text;
-                    newAppointment.IdEmployee = 1; // cambiar por el id real del empleado cuando se implemente con el login
-
-                    db.Appointments.Add(newAppointment);
-                    db.SaveChanges();
-
-                    MessageBox.Show($"Cita agendada con éxito!", "Vacunación COVID-19", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-
-                    // gets out of the loop
-                    next = false;
-                }
-                else
-                {
-                    // si no hay cupos, sumamos horas a la fecha generada
-                    if (hours < 17)
-                        hours++;
-                    else // si ya no hay cupos para antes de las 5 de la tarde, sumamos 1 día
-                    {
-                        hours = 8;
-                        days++;
-                    }
-                }
-            }
-
-            // shows "Appointment Details" form 
-            frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(dui, 
-                name, newAppointment.AppointmentDate, vaccinationCenterBDD.CenterName, this);
-            frmAppointmentProcessDetails.Show();
-            Hide();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            dashboard.Show();
+            Close();
         }
     }
 }
