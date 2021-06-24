@@ -16,5 +16,15 @@ namespace VaccinationSystemManager.Views
         {
             InitializeComponent();
         }
+
+        private void btnBeginProcess_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGeneratePDF_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

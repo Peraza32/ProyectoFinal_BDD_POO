@@ -34,7 +34,7 @@ namespace VaccinationSystemManager.Views
 
             var db = new Model.G4ProyectoDBContext();
 
-            var countUser = Information.CheckExistence(dui);
+            var countUser = UserInformation.CheckExistence(dui);
             
             //Check if user has an appointment based on counter
             if (countUser >= 1)
