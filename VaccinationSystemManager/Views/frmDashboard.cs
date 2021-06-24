@@ -34,8 +34,8 @@ namespace VaccinationSystemManager.Views
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            lblCurrenEmployee.Text = $"Empleado: {LoggedEmployee.EmployeeName}";
-            lblCabin.Text = $"Cabina: {LoggedCabin.CabinAddress}";
+            lblCurrenEmployee.Text = $"{LoggedEmployee.EmployeeName}";
+            lblCabin.Text = $"{LoggedCabin.CabinAddress}";
         }
 
         private void btnVacProcess_Click(object sender, EventArgs e)

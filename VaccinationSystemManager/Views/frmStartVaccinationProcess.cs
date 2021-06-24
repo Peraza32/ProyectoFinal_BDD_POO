@@ -27,41 +27,77 @@ namespace VaccinationSystemManager.Views
             //Initialize data
             vaccinationCitizen = citizen;
             vaccinationAppointment = appointment;
+        }
 
+        private void frmStartVaccinationProcess_Load(object sender, EventArgs e)
+        {
             //Assign data to txt
-            txtStartVaccinationDUI.Text = vaccinationCitizen.Dui;
-            txtStartVaccinationName.Text = vaccinationCitizen.CitizenName;
-            txtStartVaccinationAddress.Text = vaccinationCitizen.CitizenAddress;
-            txtStartVaccinationPhone.Text = vaccinationCitizen.PhoneNumber;
-            txtStartVaccinationMail.Text = vaccinationCitizen.EMail;
-            txtStartVaccinationIdentifier.Text = vaccinationCitizen.IdentifierNumber;
+            lblDui.Text = vaccinationCitizen.Dui;
+            lblCitizenName.Text = vaccinationCitizen.CitizenName;
+            lblAddress.Text = vaccinationCitizen.CitizenAddress;
+            lblPhoneNumber.Text = vaccinationCitizen.PhoneNumber;
+            lblEMail.Text = vaccinationCitizen.EMail;
+            lblIdentifiationNumber.Text = vaccinationCitizen.IdentifierNumber;
 
             //Select Dose type from db
             var db = new Model.G4ProyectoDBContext();
-            
+
+            // recovers the dose type from database
             vaccinationDose = db.DoseTypes
                 .Where(u => u.Id == vaccinationAppointment.ShotType)
                 .FirstOrDefault();
 
-            txtStartVaccinationDose.Text = vaccinationDose.ShotType;
+            lblDoseType.Text = vaccinationDose.ShotType;
+
+            // recovers the diseasies from database
+            var diseasies = db.Diseases
+                .Where(d => d.DuiCitizen == vaccinationAppointment.DuiCitizen)
+                .ToList();
+
+            if( diseasies.Count > 0)
+            {
+                cmbDiseasies.Visible = true;
+                cmbDiseasies.DataSource = diseasies;
+                cmbDiseasies.DisplayMember = "DiseaseName";
+            }
+            else
+            {
+                lblDiseasies.Visible = true;
+            }
+
+            // recovers the disabilities from database
+            var disabilities = db.Disabilities
+                .Where(d => d.DuiCitizen == vaccinationAppointment.DuiCitizen)
+                .ToList();
+
+            if (disabilities.Count > 0)
+            {
+                cmbDisabilities.Visible = true;
+                cmbDisabilities.DataSource = disabilities;
+                cmbDisabilities.DisplayMember = "DisabilityName";
+            }
+            else
+            {
+                lblDisabilities.Visible = true;
+            }
             
+            lblVaccinationDate.Text = vaccinationAppointment.AppointmentDate.ToString("dd-MM-yyyy");
             dtpStartVaccinationDate.Value = DateTime.Now;
-            dtpStartVaccinationStart.Value = DateTime.Now;
             dtpStartVaccinationVaccine.Value = DateTime.Now;
             dtpStartVaccinationEnd.Value = DateTime.Now;
         }
 
-        private void btnVerifyCitizenSearch_Click(object sender, EventArgs e)
+        private void btnStarVaccinationSave_Click(object sender, EventArgs e)
         {
-            var minutesFromStartToVaccine = ((dtpStartVaccinationStart.Value - dtpStartVaccinationVaccine.Value).Minutes);
+            var minutesFromStartToVaccine = ((dtpStartVaccinationDate.Value - dtpStartVaccinationVaccine.Value).Minutes);
 
             //Verify timer
-            if (dtpStartVaccinationStart.Value <= dtpStartVaccinationVaccine.Value)
+            if (dtpStartVaccinationDate.Value <= dtpStartVaccinationVaccine.Value)
             {
                 if ((dtpStartVaccinationVaccine.Value < dtpStartVaccinationEnd.Value) && ((((dtpStartVaccinationVaccine.Value - dtpStartVaccinationEnd.Value).Minutes >= -30)) || (((dtpStartVaccinationVaccine.Value - dtpStartVaccinationEnd.Value).Hours >= 0))))
                 {
                     DateTime vaccineDay = dtpStartVaccinationDate.Value;
-                    TimeSpan vaccineStart = dtpStartVaccinationStart.Value.TimeOfDay;
+                    TimeSpan vaccineStart = dtpStartVaccinationDate.Value.TimeOfDay;
                     TimeSpan vaccineShot = dtpStartVaccinationVaccine.Value.TimeOfDay;
                     TimeSpan vaccineEnd = dtpStartVaccinationEnd.Value.TimeOfDay;
 
@@ -87,16 +123,9 @@ namespace VaccinationSystemManager.Views
                     
                     if (result == DialogResult.No)
                     {
-                        MessageBox.Show("Proceso de vacunación registrado correctamente",
-                            "Vacunación COVID-19",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        //Check if it's necesary to schedule a new appointment for dose 2
+                        //Check if it's necesary to schedule a new appointment for second dose
                         if (vaccinationProcess.ShotType == 1)
                         {
-                            MessageBox.Show("Agendando cita para la segunda dosis",
-                            "Vacunación COVID-19",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             AppointmentMaker appointmentManager = new AppointmentMaker(db);
 
@@ -107,16 +136,16 @@ namespace VaccinationSystemManager.Views
                                                                                             vaccinationAppointment.IdCenter
                                                                                          );
 
+                            // returns to appointment details form
                             frmAppointmentProcessDetails details = new frmAppointmentProcessDetails(newAppointment, dashboard);
-
-                            //Devolver al form de "Ver Detalle de citas"
-
-                            this.Close();
+                            details.Show();
+                            Close();
                         }
                         else
                         {
-                            this.Close();
-                            //Devolver al Dashboard
+                            // returns to dashboard
+                            dashboard.Show();
+                            Close();
                         }
                     }
                     else
@@ -125,7 +154,7 @@ namespace VaccinationSystemManager.Views
                         frmSideEffects VaccineSideEffect = new frmSideEffects(vaccinationAppointment, vaccinationProcess, dashboard);
                         VaccineSideEffect.Show();
                         
-                        this.Close();
+                        Close();
                     }
 
                 }
@@ -148,7 +177,7 @@ namespace VaccinationSystemManager.Views
         {
             //Returns to Dashboard
             dashboard.Show();
-            this.Close();
+            Close();
         }
     }
 }
