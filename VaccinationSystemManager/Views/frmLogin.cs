@@ -12,17 +12,16 @@ using VaccinationSystemManager.Controller;
 
 namespace VaccinationSystemManager
 {
-    public partial class Form1 : Form
+    public partial class frmLogin : Form
     {
         G4ProyectoDBContext db = new G4ProyectoDBContext();
-        public Form1()
+        public frmLogin()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
             cboCabin.DataSource = db.Cabins.Select( c =>  c.CabinAddress ).ToList();
         }
         private void btnLogin_Click(object sender, EventArgs e)
@@ -46,7 +45,7 @@ namespace VaccinationSystemManager
                 //once the validators have passed it proceeds to sign in
                 if (login.SignIn())
                 {
-                    Views.Dashboard dashboard = new Views.Dashboard(db.Employees.Where(e => e.EmployeeUser == txtUsername.Text).FirstOrDefault());
+                    Views.frmDashboard dashboard = new Views.frmDashboard(db.Employees.Where(e => e.EmployeeUser == txtUsername.Text).FirstOrDefault());
                     Hide();
                     dashboard.ShowDialog();
                 }

@@ -17,11 +17,21 @@ namespace VaccinationSystemManager.Controller.AppointmentController
             database = db;
         }
 
-        private DateTime GenerateDate(VaccinationCenter location)
+        private DateTime GenerateDate(VaccinationCenter location, DoseType type)
         {
             //bucle control variable
             bool next = true;
-            DateTime appointmentDate = DateTime.Now.Date.AddHours(8);
+            DateTime appointmentDate;
+
+            if(type.Id == 1)
+            {
+                appointmentDate = DateTime.Now.Date.AddDays(1).AddHours(8);
+            }
+            else
+            {
+                appointmentDate = DateTime.Now.Date.AddDays(42).AddHours(8);
+            }
+
             Model.Appointment newAppointment = new Model.Appointment();
 
             while (next)
@@ -53,12 +63,8 @@ namespace VaccinationSystemManager.Controller.AppointmentController
             return appointmentDate;
         }
 
-        public Model.Appointment MakeAppointment(DoseType shotType, Citizen person, Employee manager)
+        public Model.Appointment MakeAppointment(DoseType shotType, Citizen person, Employee manager, int idVaccinationCenter)
         {
-            // index for random choosing a vaccination center
-            Random r = new Random();
-            int idVaccinationCenter = r.Next(1, 7);
-
             // searching with the random index in the database
             VaccinationCenter vaccinationCenterBDD = database.Set<VaccinationCenter>()
                 .SingleOrDefault(vc => vc.Id == idVaccinationCenter);
@@ -66,7 +72,7 @@ namespace VaccinationSystemManager.Controller.AppointmentController
             //creating the new appointment with the given data and a valid date
             Model.Appointment newAppointment = new Model.Appointment
             {
-                AppointmentDate = GenerateDate(vaccinationCenterBDD),
+                AppointmentDate = GenerateDate(vaccinationCenterBDD, shotType),
                 ShotType = shotType.Id,
                 IdCenter = idVaccinationCenter,
                 DuiCitizen = person.Dui,
