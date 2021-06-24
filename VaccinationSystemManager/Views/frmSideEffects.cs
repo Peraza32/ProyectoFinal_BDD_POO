@@ -13,13 +13,11 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmSideEffects : Form
     {
-        frmDashboard dashboard;
+        txtCabin dashboard;
 
         private Model.VaccinationProcess vaccinationProcess = new Model.VaccinationProcess();
-        private Model.VaccinationProcess ProcessDBdata = new Model.VaccinationProcess();
-        private Model.PresentedSideEffect vaccinationSideEffect = new Model.PresentedSideEffect();
         private Model.Appointment anAppointment = new Model.Appointment();
-        public frmSideEffects(Model.Appointment appointment, Model.VaccinationProcess process, frmDashboard dash)
+        public frmSideEffects(Model.Appointment appointment, Model.VaccinationProcess process, txtCabin dash)
         {
             InitializeComponent();
             dashboard = dash;
@@ -38,33 +36,38 @@ namespace VaccinationSystemManager.Views
 
         private void btnSideEffectsSave_Click(object sender, EventArgs e)
         {
+
+            Model.VaccinationProcess vaccinationProcessBDD = new Model.VaccinationProcess();
+
             var db = new Model.G4ProyectoDBContext();
 
-            ProcessDBdata = db.VaccinationProcesses
-                .Where(u => u.DuiCitizen == vaccinationProcess.DuiCitizen)
-                .Where(u => u.ShotType == vaccinationProcess.ShotType)
+            vaccinationProcessBDD = db.VaccinationProcesses.
+                Where(u => u.DuiCitizen == vaccinationProcess.DuiCitizen &&
+                           u.ShotType == vaccinationProcess.ShotType)
                 .FirstOrDefault();
 
-            // saves the side effect in database
-            vaccinationSideEffect.AppearanceTime = Convert.ToInt32(nudAppearanceTime.Value);
-            vaccinationSideEffect.IdVaccinationProcess = ProcessDBdata.Id;
-            vaccinationSideEffect.IdSideEffect = (cmbSideEffectsList.SelectedIndex + 1);
+            Model.PresentedSideEffect presentedSideEffect = new Model.PresentedSideEffect
+            {
+                AppearanceTime = Convert.ToInt32(nudAppearanceTime.Value),
+                IdVaccinationProcess = vaccinationProcessBDD.Id,
+                IdSideEffect = cmbSideEffectsList.SelectedIndex + 1
+            };
 
-            db.PresentedSideEffects.Add(vaccinationSideEffect);
+            db.PresentedSideEffects.Add(presentedSideEffect);
             db.SaveChanges();
-        }
 
-        private void btnSideEffectsCancel_Click(object sender, EventArgs e)
+              MessageBox.Show("Efecto secundario registrado con éxito",
+                              "Vacunación COVID-19",
+                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             var db = new Model.G4ProyectoDBContext();
 
             //Check if it's necesary to schedule a new appointment for dose 2
             if (vaccinationProcess.ShotType == 1)
             {
-                MessageBox.Show("Agendando cita para la segunda dosis",
-                "Vacunación COVID-19",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 AppointmentMaker appointmentManager = new AppointmentMaker(db);
 
                 Model.Appointment currentAppointment = appointmentManager.MakeAppointment(
@@ -75,11 +78,9 @@ namespace VaccinationSystemManager.Views
                                                                                          );
 
                 frmAppointmentProcessDetails details = new frmAppointmentProcessDetails(currentAppointment, dashboard);
-                MessageBox.Show("Proceso de vacunación registrado correctamente",
-                "Vacunación COVID-19",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 details.Show();
-                this.Close();
+                Close();
             }
             else
             {
@@ -88,8 +89,8 @@ namespace VaccinationSystemManager.Views
                     "Vacunación COVID-19",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dashboard.Show();
-                this.Close();
-        
+                Close();
+
             }
         }
     }

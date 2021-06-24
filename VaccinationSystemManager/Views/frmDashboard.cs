@@ -13,11 +13,14 @@ using VaccinationSystemManager.Model;
 
 namespace VaccinationSystemManager.Views
 {
-    public partial class frmDashboard : Form
+    public partial class txtCabin : Form
     {
+        public Cabin LoggedCabin { get; }
         public Employee LoggedEmployee { get; }
-        public frmDashboard(Employee currentEmployee)
+
+        public txtCabin(Employee currentEmployee, Cabin currentCabin, frmLogin )
         {
+            LoggedCabin = currentCabin;
             LoggedEmployee = currentEmployee;
             InitializeComponent();
         }
@@ -31,7 +34,8 @@ namespace VaccinationSystemManager.Views
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            lblCurrenEmployee.Text = LoggedEmployee.EmployeeName;
+            lblCurrenEmployee.Text = $"{LoggedEmployee.EmployeeName}";
+            lblCabin.Text = $"{LoggedCabin.CabinAddress}";
         }
 
         private void btnVacProcess_Click(object sender, EventArgs e)
@@ -39,6 +43,16 @@ namespace VaccinationSystemManager.Views
             frmVerifyCitizen frmVerify = new frmVerifyCitizen(this);
             frmVerify.Show();
             Hide();
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
