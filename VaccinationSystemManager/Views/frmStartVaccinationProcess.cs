@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VaccinationSystemManager.Controller.AppointmentController;
+using VaccinationSystemManager.Controller;
 
 namespace VaccinationSystemManager.Views
 {
@@ -38,10 +39,11 @@ namespace VaccinationSystemManager.Views
 
             //Select Dose type from db
             var db = new Model.G4ProyectoDBContext();
-            
-            vaccinationDose = db.DoseTypes
-                .Where(u => u.Id == vaccinationAppointment.ShotType)
-                .FirstOrDefault();
+
+            vaccinationDose = UserInformation.GetDoseType(vaccinationAppointment.ShotType);
+                
+                
+               
 
             txtStartVaccinationDose.Text = vaccinationDose.ShotType;
             
@@ -98,13 +100,16 @@ namespace VaccinationSystemManager.Views
                             "Vacunación COVID-19",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            AppointmentMaker appointmentManager = new AppointmentMaker(db);
+                            AppointmentProxy appointmentManager = new AppointmentProxy(db);
+
+                            DateTime appointmentDate = appointmentManager.GenerateDate(UserInformation.GetVaccinationCenter(vaccinationAppointment.IdCenter), UserInformation.GetDoseType(2));
 
                             Model.Appointment newAppointment = appointmentManager.MakeAppointment(
-                                                                                            db.DoseTypes.Where(d => d.Id == 2).FirstOrDefault(),
-                                                                                            db.Citizens.Where(c => c.Dui == vaccinationAppointment.DuiCitizen).FirstOrDefault(),
+                                                                                            UserInformation.GetDoseType(2),
+                                                                                            UserInformation.GetCitizen(vaccinationAppointment.DuiCitizen),
                                                                                             dashboard.LoggedEmployee,
-                                                                                            vaccinationAppointment.IdCenter
+                                                                                            vaccinationAppointment.IdCenter,
+                                                                                            appointmentDate
                                                                                          );
 
                             frmAppointmentProcessDetails details = new frmAppointmentProcessDetails(newAppointment, dashboard);

@@ -260,6 +260,7 @@ namespace VaccinationSystemManager.Views
             this.btnGeneratePDF.TabIndex = 0;
             this.btnGeneratePDF.Text = "Generar PDF";
             this.btnGeneratePDF.UseVisualStyleBackColor = false;
+            this.btnGeneratePDF.Click += new System.EventHandler(this.btnGeneratePDF_Click);
             // 
             // btnBeginProcess
             // 
@@ -272,6 +273,7 @@ namespace VaccinationSystemManager.Views
             this.btnBeginProcess.TabIndex = 1;
             this.btnBeginProcess.Text = "Iniciar Proceso de Vacunación";
             this.btnBeginProcess.UseVisualStyleBackColor = false;
+            this.btnBeginProcess.Click += new System.EventHandler(this.btnBeginProcess_Click);
             // 
             // tableLayoutPanel3
             // 

@@ -7,7 +7,7 @@ using VaccinationSystemManager.Model;
 
 namespace VaccinationSystemManager.Controller
 {
-    static class Information
+    static class UserInformation
     {
 
 
@@ -35,6 +35,38 @@ namespace VaccinationSystemManager.Controller
         }
 
 
+        public static VaccinationCenter GetVaccinationCenter(int idCenter)
+        {
+            G4ProyectoDBContext db = new G4ProyectoDBContext();
+            var vCenter = db.VaccinationCenters
+                            .Where(v => v.Id == idCenter)
+                            .SingleOrDefault();
+
+
+            return vCenter;
+        }
+
+        public static DoseType GetDoseType(int idDose)
+        {
+            G4ProyectoDBContext db = new G4ProyectoDBContext();
+            var Dose = db.DoseTypes.Where(d => d.Id == idDose)
+                         .FirstOrDefault();
+
+
+            return Dose;
+        }
+
+
+        public static Citizen GetCitizen(string id)
+        {
+            G4ProyectoDBContext db = new G4ProyectoDBContext();
+            var citizen = db.Citizens
+                .Where(c => c.Dui == id)
+                .FirstOrDefault();
+
+            return citizen;
+        
+        }
 
 
     }
