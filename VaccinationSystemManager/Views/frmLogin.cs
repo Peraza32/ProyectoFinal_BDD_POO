@@ -45,7 +45,7 @@ namespace VaccinationSystemManager
                 //once the validators have passed it proceeds to sign in
                 if (login.SignIn())
                 {
-                    Views.frmDashboard dashboard = new Views.frmDashboard(db.Employees.Where(e => e.EmployeeUser == txtUsername.Text).FirstOrDefault());
+                    Views.txtCabin dashboard = new Views.txtCabin(db.Employees.Where(e => e.EmployeeUser == txtUsername.Text).FirstOrDefault(), db.Cabins.Where(c=>c.CabinAddress == cboCabin.Text).FirstOrDefault());
                     Hide();
                     dashboard.ShowDialog();
                 }
@@ -60,6 +60,23 @@ namespace VaccinationSystemManager
         private void btnLogin_Leave(object sender, EventArgs e)
         {
             epLogin.Clear();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void chkbShowPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkbShowPassword.Checked)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
         }
     }
 }

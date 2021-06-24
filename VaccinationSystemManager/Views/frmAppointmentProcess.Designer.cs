@@ -229,6 +229,7 @@ namespace VaccinationSystemManager.Views
             this.txtEssentialInstitution.Name = "txtEssentialInstitution";
             this.txtEssentialInstitution.Size = new System.Drawing.Size(247, 37);
             this.txtEssentialInstitution.TabIndex = 17;
+            this.txtEssentialInstitution.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEssentialInstitution_KeyPress);
             // 
             // btnCancel
             // 
@@ -261,6 +262,7 @@ namespace VaccinationSystemManager.Views
             this.btnRegister.Text = "Registrar";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnRegister.Leave += new System.EventHandler(this.btnRegister_Leave);
             // 
             // picLogo
             // 

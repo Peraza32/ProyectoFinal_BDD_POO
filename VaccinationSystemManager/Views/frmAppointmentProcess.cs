@@ -15,8 +15,8 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmAppointmentProcess : Form
     {
-        frmDashboard dashboard;
-        public frmAppointmentProcess(frmDashboard lastForm)
+        txtCabin dashboard;
+        public frmAppointmentProcess(txtCabin lastForm)
         {
             dashboard = lastForm;
             InitializeComponent();
@@ -49,183 +49,144 @@ namespace VaccinationSystemManager.Views
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            var db = new G4ProyectoDBContext();
-
-            // stores the dui of the citizen
-            string dui = txtDui.Text;
-
-            // stores the name of the citizen
-            string name = txtName.Text;
-
-            // stores the birth date of the citizen
-            DateTime birthDate = dtpBirthDate.Value;
-
-            // age of the citizen
-            var years = ((DateTime.Now - birthDate).Days) / 365;
-
-            // flag variable that indicates if the citizen
-            // can be vaccinated
-            bool canBeVaccinated;
-
-            // Es mayor de 18 años
-            if (years >= 18)
+            try
             {
-                // Tiene alguna enfermedad crónica
-                if (txtDiseases.TextLength > 0)
-                    canBeVaccinated = true;
-                // No tiene enfermedad crónica
-                else
+                var db = new G4ProyectoDBContext();
+                bool elegible = false;
+                //handler chain
+                EmailHandler emailValidator = new EmailHandler(null, txtEMail);
+                PhoneNumberHandler phoneValidator = new PhoneNumberHandler(emailValidator, txtPhoneNumber);
+                EmptyInputHandler emptyTextValidator = new EmptyInputHandler(phoneValidator, txtAddres);
+                BirthdateAdultHandler birthdateValidator = new BirthdateAdultHandler(emptyTextValidator, dtpBirthDate);
+                NameHandler nameValidator = new NameHandler(birthdateValidator, txtName);
+                DuiHandler duiValidator = new DuiHandler(nameValidator, txtDui);
+                //if the chain passes
+                if (duiValidator.Validate())
                 {
-                    // Tiene alguna discapacidad
-                    if (txtDisabilities.TextLength > 0)
-                        canBeVaccinated = true;
-                    // No tiene discapacidad
+                    string addres = txtAddres.Text;
+                    string phoneNumber = txtPhoneNumber.Text;
+
+                    Citizen newCitizen = new Citizen
+                    {
+                        Dui = txtDui.Text,
+                        CitizenName = txtName.Text,
+                        CitizenAddress = addres,
+                        PhoneNumber = phoneNumber
+                    };
+
+                    if (txtEMail.Text.Trim() != string.Empty)
+                    {
+                        newCitizen.EMail = txtEMail.Text;
+                    }
                     else
                     {
-                        // Pertenece a un grupo especial (Personal médico, PNC, Fuerza Armada, etc.)
-                        if (txtEssentialInstitution.TextLength > 0)
-                            canBeVaccinated = true;
-                        // No pertenece a un grupo especial
-                        else
-                        {
-                            // Es mayor de 60 años
-                            if (years >= 60)
-                                canBeVaccinated = true;
-                            // No es mayor de 60 años
-                            else
-                                // No es apto para ser vacunado
-                                canBeVaccinated = false;
+                        newCitizen.EMail = null;
+                    }
 
+                    if (txtEssentialInstitution.Text.Trim() != string.Empty)
+                    {
+                        newCitizen.IdentifierNumber = txtEssentialInstitution.Text;
+                        elegible = true;
+                    }
+                    else
+                    {
+                        newCitizen.IdentifierNumber = null;
+                    }
+                    // saves the new citizen in the database
+                    db.Citizens.Add(newCitizen);
+                    db.SaveChanges();
+
+                    // has a chronic illness
+                    if (txtDiseases.TextLength > 0)
+                    {
+                        elegible = true;
+                        // obtains all diseases of the citizen
+                        string diseasies = txtDiseases.Text;
+                        string[] arrayDiseasies = diseasies.Split(',');
+
+                        // saves the diseases of the citizen in the database
+                        foreach (var d in arrayDiseasies)
+                        {
+                            Disease newDisease = new Disease
+                            {
+                                DiseaseName = d,
+                                DuiCitizen = txtDui.Text
+                            };
+
+                            db.Diseases.Add(newDisease);
+                            db.SaveChanges();
                         }
                     }
-                }
-            }
-            // Es menor de 18 años (no es apto para ser vacunado)
-            else
-            {
-                canBeVaccinated = false;
-            }
-
-            // Ya hemos validado si el usuario pertenece a un grupo prioritario
-            // y determinamos si puede ser vacunado
-            if (canBeVaccinated)
-            {
-                string addres = txtAddres.Text;
-                string phoneNumber = txtPhoneNumber.Text;
-
-                Citizen newCitizen = new Citizen
-                {
-                    Dui = dui,
-                    CitizenName = name,
-                    CitizenAddress = addres,
-                    PhoneNumber = phoneNumber
-                };
-
-                if (txtEMail.TextLength > 0)
-                {
-                    string email = txtEMail.Text;
-                    newCitizen.EMail = email;
-                }
-                else
-                {
-                    newCitizen.EMail = null;
-                }
-
-                if (txtEssentialInstitution.TextLength > 0)
-                {
-                    string identifierNumber = txtEssentialInstitution.Text;
-                    newCitizen.IdentifierNumber = identifierNumber;
-                }
-                else
-                {
-                    newCitizen.IdentifierNumber = null;
-                }
-
-                // saves the new citizen in the database
-                db.Citizens.Add(newCitizen);
-                db.SaveChanges();
-
-                 // Tiene alguna enfermedad crónica
-                 if(txtDiseases.TextLength > 0)
-                 {
-                    // obtains all diseases of the citizen
-                    string diseasies = txtDiseases.Text;
-                    string[] arrayDiseasies = diseasies.Split(',');
-
-                    // saves the diseases of the citizen in the database
-                    foreach (var d in arrayDiseasies)
+                    // has a dissability
+                    else if (txtDisabilities.TextLength > 0)
                     {
-                        Disease newDisease = new Disease
-                        {
-                            DiseaseName = d,
-                            DuiCitizen = dui
-                        };
+                        elegible = true;
+                        // obtains all disabilities of the citizen
+                        string disabilities = txtDisabilities.Text;
+                        string[] arrayDisabilities = disabilities.Split(',');
 
-                        db.Diseases.Add(newDisease);
+                        // saves the disabilities of the citizen in the database
+                        foreach (var d in arrayDisabilities)
+                        {
+                            Disability newDisability = new Disability
+                            {
+                                DisabilityName = d,
+                                DuiCitizen = txtDui.Text
+                            };
+                            db.Disabilities.Add(newDisability);
+                            db.SaveChanges();
+                        }
+                    }
+                    //checks if the person is elegible for vaccination
+                    if (elegible)
+                    {
+                        Random r = new Random();
+                        int idVacCenter = r.Next(1, 7);
+
+                        AppointmentMaker appointmentManager = new AppointmentMaker(db);
+                        //saves and shows the created appointment
+                        Appointment createdAppointment = appointmentManager.MakeAppointment(db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault(), newCitizen, dashboard.LoggedEmployee, idVacCenter);
+
+                        frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(createdAppointment, dashboard);
+                        frmAppointmentProcessDetails.Show();
+                        Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show($"No se puede agendar una cita para el ciudadano {txtName.Text} porque " +
+                        $"no pertenece a ningún grupo prioritario", "Vacunación COVID-19",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //Removes the person from the database if its not elegible for vaccination
+                        db.Citizens.Remove(newCitizen);
                         db.SaveChanges();
                     }
                 }
-                 
-                 // Tiene alguna discapacidad
-                 if(txtDisabilities.TextLength > 0)
-                 {
-                     // obtains all disabilities of the citizen
-                     string disabilities = txtDisabilities.Text;
-                     string[] arrayDisabilities = disabilities.Split(',');
-
-                    // saves the disabilities of the citizen in the database
-                    foreach (var d in arrayDisabilities)
-                    {
-                        Disability newDisability = new Disability
-                        {
-                            DisabilityName = d,
-                            DuiCitizen = dui
-                        };
-
-                        db.Disabilities.Add(newDisability);
-                        db.SaveChanges();
-                    }
-                 }
-
-                MessageBox.Show("Usuario registrado con éxito", "Vacunación COVID-19",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                Random r = new Random();
-                int idVacCenter = r.Next(1, 7);
-
-                AppointmentMaker appointmentManager = new AppointmentMaker(db);
-
-                Appointment createdAppointment = appointmentManager.MakeAppointment( db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault(), newCitizen, dashboard.LoggedEmployee, idVacCenter );
-
-                frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(createdAppointment, dashboard);
-                frmAppointmentProcessDetails.Show();
-                Hide();
             }
-            else
+            catch(FormInputException ex)
             {
-                if(years < 18)
-                {
-                    MessageBox.Show("Las citas para ciudadanos menores de 18 años aún no han " +
-                    "sido habilitadas. Favor permanecer pendiente de los medios oficiales " +
-                    "para saber la fecha en que puedas agendar tu cita de vacunación",
-                    "Vacunación COVID-19",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show($"No se puede agendar una cita para el ciudadano {name} porque " +
-                    $"no pertenece a ningún grupo prioritario", "Vacunación COVID-19",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }  
+                epAppointment.SetError(ex.errorTarget, ex.Message);
             }
             
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             dashboard.Show();
             Close();
+        }
+
+        private void txtEssentialInstitution_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnRegister_Leave(object sender, EventArgs e)
+        {
+            epAppointment.Clear();
         }
     }
 }

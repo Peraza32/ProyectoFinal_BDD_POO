@@ -13,12 +13,12 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmStartVaccinationProcess : Form
     {
-        frmDashboard dashboard;
+        txtCabin dashboard;
         private Model.Citizen vaccinationCitizen = new Model.Citizen();
         private Model.Appointment vaccinationAppointment = new Model.Appointment();
         private Model.DoseType vaccinationDose = new Model.DoseType();
 
-        public frmStartVaccinationProcess(Model.Citizen citizen, Model.Appointment appointment, frmDashboard dash)
+        public frmStartVaccinationProcess(Model.Citizen citizen, Model.Appointment appointment, txtCabin dash)
         {
             InitializeComponent();
 

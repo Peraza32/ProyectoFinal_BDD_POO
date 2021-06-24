@@ -12,8 +12,8 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmVerifyCitizen : Form
     {
-        frmDashboard dashboard;
-        public frmVerifyCitizen(frmDashboard dash)
+        txtCabin dashboard;
+        public frmVerifyCitizen(txtCabin dash)
         {
             dashboard = dash;
             InitializeComponent();

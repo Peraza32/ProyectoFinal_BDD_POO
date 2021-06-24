@@ -13,13 +13,13 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmSideEffects : Form
     {
-        frmDashboard dashboard;
+        txtCabin dashboard;
 
         private Model.VaccinationProcess vaccinationProcess = new Model.VaccinationProcess();
         private Model.VaccinationProcess ProcessDBdata = new Model.VaccinationProcess();
         private Model.PresentedSideEffect vaccinationSideEffect = new Model.PresentedSideEffect();
         private Model.Appointment anAppointment = new Model.Appointment();
-        public frmSideEffects(Model.Appointment appointment, Model.VaccinationProcess process, frmDashboard dash)
+        public frmSideEffects(Model.Appointment appointment, Model.VaccinationProcess process, txtCabin dash)
         {
             InitializeComponent();
             dashboard = dash;
