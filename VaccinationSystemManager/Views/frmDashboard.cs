@@ -33,8 +33,8 @@ namespace VaccinationSystemManager.Views
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            lblCurrenEmployee.Text = $"Empleado: {LoggedEmployee.EmployeeName}";
-            lblCabin.Text = $"Cabina: {LoggedCabin.CabinAddress}";
+            lblCurrenEmployee.Text = $"{LoggedEmployee.EmployeeName}";
+            lblCabin.Text = $"{LoggedCabin.CabinAddress}";
         }
 
         private void btnVacProcess_Click(object sender, EventArgs e)
@@ -42,6 +42,16 @@ namespace VaccinationSystemManager.Views
             frmVerifyCitizen frmVerify = new frmVerifyCitizen(this);
             frmVerify.Show();
             Hide();
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
