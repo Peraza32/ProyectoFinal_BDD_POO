@@ -10,11 +10,43 @@ namespace VaccinationSystemManager.Controller.AppointmentController
     class AppointmentProxy : IAppointment
     {
 
-        private G4ProyectoDBContext database;
+        
+        private AppointmentMaker appointment;
 
-        public Model.Appointment MakeAppointment(DoseType shotType, Citizen person, Employee manager)
+        public AppointmentProxy(G4ProyectoDBContext db)
         {
-            return new Appointment();
+            appointment = new AppointmentMaker(db);
+        }
+
+        public Model.Appointment MakeAppointment(DoseType shotType, Citizen person, Employee manager, int idVaccinationCenter, DateTime date)
+        {
+           return appointment.MakeAppointment(shotType, person, manager, idVaccinationCenter,  date);
+        }
+
+       
+
+
+        public DateTime GenerateDate(VaccinationCenter location, DoseType type)
+        {
+            //bucle control variable
+           
+            DateTime appointmentDate;
+
+            if (type.Id == 1)
+            {
+                appointmentDate = DateTime.Now.Date.AddDays(1).AddHours(8);
+            }
+            else
+            {
+                appointmentDate = DateTime.Now.Date.AddDays(42).AddHours(8);
+            }
+
+            Model.Appointment newAppointment = new Model.Appointment();
+            
+
+            appointmentDate = appointment.GetAvailability(appointmentDate, location);
+
+            return appointmentDate;
         }
     }
 }

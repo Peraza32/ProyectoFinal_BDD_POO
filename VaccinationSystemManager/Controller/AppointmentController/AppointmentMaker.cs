@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace VaccinationSystemManager.Controller.AppointmentController
 {
-    class AppointmentMaker
+     class AppointmentMaker:IAppointment
     {
         G4ProyectoDBContext database;
 
@@ -17,53 +17,7 @@ namespace VaccinationSystemManager.Controller.AppointmentController
             database = db;
         }
 
-        private DateTime GenerateDate(VaccinationCenter location, DoseType type)
-        {
-            //bucle control variable
-            bool next = true;
-            DateTime appointmentDate;
-
-            if(type.Id == 1)
-            {
-                appointmentDate = DateTime.Now.Date.AddDays(1).AddHours(8);
-            }
-            else
-            {
-                appointmentDate = DateTime.Now.Date.AddDays(42).AddHours(8);
-            }
-
-            Model.Appointment newAppointment = new Model.Appointment();
-
-            while (next)
-            {
-                // getting all appointments in an specific center
-                var totalAppointments = database.Appointments
-                    .Where(ap => ap.AppointmentDate == appointmentDate && ap.IdCenter == location.Id)
-                    .ToList();
-
-                // checking if the capacity is not exceeded
-                if ((location.Capacity - totalAppointments.Count) > 0)
-                {
-                    //if there is enough room for another apointment just exists the loop
-                    next = false;
-                }
-                else
-                {
-                    //otherwise it keeps adding hours until 17:00
-                    if (appointmentDate.Hour < 17)
-                        appointmentDate.AddHours(1);
-                    else // when it reaches the end of the day adds another day and resets the date
-                    {
-                        appointmentDate.AddDays(1);
-                        appointmentDate = appointmentDate.Date.AddHours(8);
-                    }
-                }
-            }
-
-            return appointmentDate;
-        }
-
-        public Model.Appointment MakeAppointment(DoseType shotType, Citizen person, Employee manager, int idVaccinationCenter)
+        public Model.Appointment MakeAppointment(DoseType shotType, Citizen person, Employee manager, int idVaccinationCenter, DateTime date)
         {
             // searching with the random index in the database
             VaccinationCenter vaccinationCenterBDD = database.Set<VaccinationCenter>()
@@ -72,7 +26,7 @@ namespace VaccinationSystemManager.Controller.AppointmentController
             //creating the new appointment with the given data and a valid date
             Model.Appointment newAppointment = new Model.Appointment
             {
-                AppointmentDate = GenerateDate(vaccinationCenterBDD, shotType),
+                AppointmentDate = date,
                 ShotType = shotType.Id,
                 IdCenter = idVaccinationCenter,
                 DuiCitizen = person.Dui,
@@ -89,5 +43,43 @@ namespace VaccinationSystemManager.Controller.AppointmentController
             return newAppointment;
         }
 
+
+        public DateTime GetAvailability(DateTime possibleDate, VaccinationCenter location)
+        {
+            //Bucle control
+            bool next = true;
+            
+
+            while (next)
+            {
+                // getting all appointments in an specific center
+                var totalAppointments = database.Appointments
+                    .Where(ap => ap.AppointmentDate == possibleDate && ap.IdCenter == location.Id)
+                    .ToList();
+
+                // checking if the capacity is not exceeded
+                if ((location.Capacity - totalAppointments.Count) > 0)
+                {
+                    //if there is enough room for another apointment just exists the loop
+                    next = false;
+                }
+                else
+                {
+                    //otherwise it keeps adding hours until 17:00
+                    if (possibleDate.Hour < 17)
+                        possibleDate.AddHours(1);
+                    else // when it reaches the end of the day adds another day and resets the date
+                    {
+                        possibleDate.AddDays(1);
+                        possibleDate = possibleDate.Date.AddHours(8);
+                    }
+                }
+            }
+
+
+            return possibleDate;
+        }
+
+        
     }
 }

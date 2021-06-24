@@ -10,6 +10,21 @@
     <Compile Update="Views\frmAppointmentProcessDetails.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmSideEffects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmStartVaccinationProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmVerifyCitizenAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\frmViewAppointment.cs">
       <SubType>Form</SubType>
     </Compile>

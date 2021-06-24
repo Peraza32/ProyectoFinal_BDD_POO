@@ -110,14 +110,14 @@ namespace VaccinationSystemManager.Views
             // y determinamos si puede ser vacunado
             if (canBeVaccinated)
             {
-                string addres = txtAddres.Text;
+                string address = txtAddres.Text;
                 string phoneNumber = txtPhoneNumber.Text;
 
                 Citizen newCitizen = new Citizen
                 {
                     Dui = dui,
                     CitizenName = name,
-                    CitizenAddress = addres,
+                    CitizenAddress = address,
                     PhoneNumber = phoneNumber
                 };
 
@@ -193,13 +193,21 @@ namespace VaccinationSystemManager.Views
                 Random r = new Random();
                 int idVacCenter = r.Next(1, 7);
 
-                AppointmentMaker appointmentManager = new AppointmentMaker(db);
+                AppointmentProxy appointmentManager = new AppointmentProxy(db);
 
-                Appointment createdAppointment = appointmentManager.MakeAppointment( db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault(), newCitizen, dashboard.LoggedEmployee, idVacCenter );
+                //Appointment date creation
+                DateTime appointmentDate = appointmentManager.GenerateDate(db.VaccinationCenters.Where(v => v.Id == idVacCenter).FirstOrDefault(), db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault());
 
-                frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(createdAppointment, dashboard);
-                frmAppointmentProcessDetails.Show();
-                Hide();
+
+                    //Appointment creaton, built -in valdation for already existing appointment
+                    Appointment createdAppointment = appointmentManager.MakeAppointment(db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault(), newCitizen, dashboard.LoggedEmployee, idVacCenter, appointmentDate);
+                    MessageBox.Show("Cita Registrada exitosamente", "Cita registrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(createdAppointment, dashboard);
+                    frmAppointmentProcessDetails.Show();
+                    Hide();
+                
+
+
             }
             else
             {

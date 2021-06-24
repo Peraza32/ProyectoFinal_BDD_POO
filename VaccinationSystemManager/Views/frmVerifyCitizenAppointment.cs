@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VaccinationSystemManager.Controller;
 
 namespace VaccinationSystemManager.Views
 {
@@ -33,9 +34,7 @@ namespace VaccinationSystemManager.Views
 
             var db = new Model.G4ProyectoDBContext();
 
-            var countUser = db.Appointments
-                .Where(u => u.DuiCitizen == dui)
-                .Count();
+            var countUser = Information.CheckExistence(dui);
             
             //Check if user has an appointment based on counter
             if (countUser >= 1)
