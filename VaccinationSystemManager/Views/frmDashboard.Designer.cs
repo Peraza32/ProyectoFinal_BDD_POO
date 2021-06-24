@@ -30,11 +30,11 @@ namespace VaccinationSystemManager.Views
         private void InitializeComponent()
         {
             this.btnAppointment = new System.Windows.Forms.Button();
-            this.btnLogOut = new System.Windows.Forms.Button();
+            this.btnStatistics = new System.Windows.Forms.Button();
             this.btnVacProcess = new System.Windows.Forms.Button();
             this.btnShowAppointments = new System.Windows.Forms.Button();
             this.lblCurrenEmployee = new System.Windows.Forms.Label();
-            this.btnStatistics = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.lblCabin = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -59,19 +59,20 @@ namespace VaccinationSystemManager.Views
             this.btnAppointment.UseVisualStyleBackColor = false;
             this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
-            // btnLogOut
+            // btnStatistics
             // 
-            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
-            this.btnLogOut.FlatAppearance.BorderSize = 0;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.Location = new System.Drawing.Point(380, 478);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(297, 233);
-            this.btnLogOut.TabIndex = 1;
-            this.btnLogOut.Text = "Estadísticas";
-            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnStatistics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
+            this.btnStatistics.FlatAppearance.BorderSize = 0;
+            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistics.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnStatistics.ForeColor = System.Drawing.Color.White;
+            this.btnStatistics.Location = new System.Drawing.Point(380, 478);
+            this.btnStatistics.Name = "btnStatistics";
+            this.btnStatistics.Size = new System.Drawing.Size(297, 233);
+            this.btnStatistics.TabIndex = 1;
+            this.btnStatistics.Text = "Estadísticas";
+            this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnStatistics.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnVacProcess
             // 
@@ -113,19 +114,20 @@ namespace VaccinationSystemManager.Views
             this.lblCurrenEmployee.TabIndex = 4;
             this.lblCurrenEmployee.Text = "Empleado:";
             // 
-            // btnStatistics
+            // btnLogOut
             // 
-            this.btnStatistics.BackColor = System.Drawing.Color.Firebrick;
-            this.btnStatistics.FlatAppearance.BorderSize = 0;
-            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistics.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnStatistics.ForeColor = System.Drawing.Color.White;
-            this.btnStatistics.Location = new System.Drawing.Point(188, 593);
-            this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Size = new System.Drawing.Size(241, 81);
-            this.btnStatistics.TabIndex = 5;
-            this.btnStatistics.Text = "Cerrar sesión";
-            this.btnStatistics.UseVisualStyleBackColor = false;
+            this.btnLogOut.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.Location = new System.Drawing.Point(188, 593);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(241, 81);
+            this.btnLogOut.TabIndex = 5;
+            this.btnLogOut.Text = "Cerrar sesión";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnStatistics_Click);
             // 
             // lblCabin
             // 
@@ -144,7 +146,7 @@ namespace VaccinationSystemManager.Views
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnAppointment);
             this.panel1.Controls.Add(this.btnVacProcess);
-            this.panel1.Controls.Add(this.btnLogOut);
+            this.panel1.Controls.Add(this.btnStatistics);
             this.panel1.Controls.Add(this.btnShowAppointments);
             this.panel1.Location = new System.Drawing.Point(619, 0);
             this.panel1.Name = "panel1";
@@ -179,7 +181,7 @@ namespace VaccinationSystemManager.Views
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblCabin);
-            this.Controls.Add(this.btnStatistics);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.lblCurrenEmployee);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -198,11 +200,11 @@ namespace VaccinationSystemManager.Views
         #endregion
 
         private System.Windows.Forms.Button btnAppointment;
-        private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Button btnStatistics;
         private System.Windows.Forms.Button btnVacProcess;
         private System.Windows.Forms.Button btnShowAppointments;
         private System.Windows.Forms.Label lblCurrenEmployee;
-        private System.Windows.Forms.Button btnStatistics;
+        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Label lblCabin;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -17,7 +17,8 @@ namespace VaccinationSystemManager.Views
     {
         public Cabin LoggedCabin { get; }
         public Employee LoggedEmployee { get; }
-        public txtCabin(Employee currentEmployee, Cabin currentCabin)
+
+        public txtCabin(Employee currentEmployee, Cabin currentCabin, frmLogin )
         {
             LoggedCabin = currentCabin;
             LoggedEmployee = currentEmployee;
@@ -42,6 +43,16 @@ namespace VaccinationSystemManager.Views
             frmVerifyCitizen frmVerify = new frmVerifyCitizen(this);
             frmVerify.Show();
             Hide();
+        }
+
+        private void btnStatistics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
