@@ -26,7 +26,7 @@ namespace VaccinationSystemManager.Views
             CreateStaticPieTab1();
 
             //Pie chart for Tab2 == "Efectos secundarios presentados"
-            //CreateStaticPieTab2();
+            CreateStaticPieTab2();
 
             //Rectangle Bar Serie for Tab3 == "Eficiencia del proceso de vacunación"
             //CreateStaticPieTab3();
@@ -44,6 +44,21 @@ namespace VaccinationSystemManager.Views
 
             modelP1.Series.Add(seriesP1);
             plotView1.Model = modelP1;
+        }
+
+        public void CreateStaticPieTab2()
+        {
+            var modelP2 = new PlotModel { Title = "Efectos secundarios presentados" };
+
+            dynamic seriesP2 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.8, AngleSpan = 360, StartAngle = 0 };
+
+            foreach (Model.SideEffect data in Controller.Statistics.RetrieveSideEffectName())
+            {
+                seriesP2.Slices.Add(new PieSlice(data.Effect, Controller.Statistics.CountPresentedSideEffect(data.Id)) { IsExploded = true });
+            }
+
+            modelP2.Series.Add(seriesP2);
+            plotView2.Model = modelP2;
         }
     }
 }
