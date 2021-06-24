@@ -15,9 +15,9 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmStatistics : Form
     {
-        txtCabin dashboard;
+        frmDashboard dashboard;
 
-        public frmStatistics(txtCabin dash)
+        public frmStatistics(frmDashboard dash)
         {
             InitializeComponent();
 

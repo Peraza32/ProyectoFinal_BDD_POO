@@ -55,7 +55,9 @@ namespace VaccinationSystemManager.Views
 
         private void btnStatistic_Click(object sender, EventArgs e)
         {
-
+            frmStatistics statistics = new frmStatistics(this);
+            statistics.Show();
+            Hide();
         }
     }
 }
