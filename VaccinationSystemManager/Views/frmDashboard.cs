@@ -17,9 +17,11 @@ namespace VaccinationSystemManager.Views
     {
         public Cabin LoggedCabin { get; }
         public Employee LoggedEmployee { get; }
+        public frmLogin Login { get; }
 
-        public txtCabin(Employee currentEmployee, Cabin currentCabin, frmLogin )
+        public txtCabin(Employee currentEmployee, Cabin currentCabin, frmLogin login )
         {
+            Login = login;
             LoggedCabin = currentCabin;
             LoggedEmployee = currentEmployee;
             InitializeComponent();
