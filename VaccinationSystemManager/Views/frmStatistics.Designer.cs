@@ -235,7 +235,7 @@ namespace VaccinationSystemManager.Views
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(142, 27);
+            this.pictureBox2.Location = new System.Drawing.Point(170, 26);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(462, 90);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -248,7 +248,7 @@ namespace VaccinationSystemManager.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.label1.Location = new System.Drawing.Point(326, 162);
+            this.label1.Location = new System.Drawing.Point(342, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 22);
             this.label1.TabIndex = 44;
@@ -341,11 +341,11 @@ namespace VaccinationSystemManager.Views
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(300, 814);
+            this.button1.Location = new System.Drawing.Point(298, 806);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(170, 48);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Salir";
+            this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

@@ -83,9 +83,17 @@ namespace VaccinationSystemManager.Controller.AppointmentController
 
             database.SaveChanges();
 
-            MessageBox.Show($"Cita agendada con éxito!", "Vacunación COVID-19", MessageBoxButtons.OK,
+            if(newAppointment.ShotType == 1)
+            {
+                MessageBox.Show($"Cita agendada con éxito!", "Vacunación COVID-19", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-
+            }
+            else
+            {
+                MessageBox.Show($"Cita para la segunda dosis agendada con éxito!", "Vacunación COVID-19", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            }
+               
             return newAppointment;
         }
 

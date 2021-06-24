@@ -30,7 +30,7 @@ namespace VaccinationSystemManager.Views
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSideEffects));
-            this.btnSideEffectsCancel = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -51,25 +51,26 @@ namespace VaccinationSystemManager.Views
             ((System.ComponentModel.ISupportInitialize)(this.nudAppearanceTime)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnSideEffectsCancel
+            // btnCancel
             // 
-            this.btnSideEffectsCancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnSideEffectsCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
-            this.btnSideEffectsCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSideEffectsCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSideEffectsCancel.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSideEffectsCancel.Location = new System.Drawing.Point(58, 3);
-            this.btnSideEffectsCancel.Name = "btnSideEffectsCancel";
-            this.btnSideEffectsCancel.Size = new System.Drawing.Size(170, 48);
-            this.btnSideEffectsCancel.TabIndex = 7;
-            this.btnSideEffectsCancel.Text = "Salir";
-            this.btnSideEffectsCancel.UseVisualStyleBackColor = false;
-            this.btnSideEffectsCancel.Click += new System.EventHandler(this.btnSideEffectsCancel_Click);
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCancel.Location = new System.Drawing.Point(30, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(170, 65);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Finalizar";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(61, 53);
+            this.pictureBox1.Location = new System.Drawing.Point(61, 54);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(462, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -82,7 +83,7 @@ namespace VaccinationSystemManager.Views
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(110, 184);
+            this.label9.Location = new System.Drawing.Point(110, 187);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(363, 22);
             this.label9.TabIndex = 44;
@@ -103,19 +104,19 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 12;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.238288F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.72861F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.023831F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.429247F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.023831F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.327242F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.25968F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.364707F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.86372F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.364707F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.13785F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.238292F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(585, 542);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.280175F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.80899F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.046609F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.166969F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.08167F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.35593F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.29713F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.384497F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.91298F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.384497F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.01058F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.004534F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(585, 551);
             this.tableLayoutPanel1.TabIndex = 45;
             // 
             // tableLayoutPanel2
@@ -123,29 +124,31 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.btnSideEffectsCancel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnCancel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSideEffectsSave, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(61, 430);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(61, 440);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(462, 54);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(462, 71);
             this.tableLayoutPanel2.TabIndex = 45;
             // 
             // btnSideEffectsSave
             // 
-            this.btnSideEffectsSave.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnSideEffectsSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSideEffectsSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
             this.btnSideEffectsSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSideEffectsSave.FlatAppearance.BorderSize = 0;
             this.btnSideEffectsSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideEffectsSave.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSideEffectsSave.Location = new System.Drawing.Point(234, 3);
+            this.btnSideEffectsSave.Location = new System.Drawing.Point(261, 3);
             this.btnSideEffectsSave.Name = "btnSideEffectsSave";
-            this.btnSideEffectsSave.Size = new System.Drawing.Size(170, 48);
+            this.btnSideEffectsSave.Size = new System.Drawing.Size(170, 65);
             this.btnSideEffectsSave.TabIndex = 8;
             this.btnSideEffectsSave.Text = "Registrar";
             this.btnSideEffectsSave.UseVisualStyleBackColor = false;
+            this.btnSideEffectsSave.Click += new System.EventHandler(this.btnSideEffectsSave_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -154,7 +157,7 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(61, 349);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(61, 356);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -192,7 +195,6 @@ namespace VaccinationSystemManager.Views
             // nudAppearanceTime
             // 
             this.nudAppearanceTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.nudAppearanceTime.Enabled = false;
             this.nudAppearanceTime.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nudAppearanceTime.Location = new System.Drawing.Point(3, 3);
             this.nudAppearanceTime.Maximum = new decimal(new int[] {
@@ -232,7 +234,7 @@ namespace VaccinationSystemManager.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(61, 249);
+            this.label1.Location = new System.Drawing.Point(61, 253);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(198, 26);
             this.label1.TabIndex = 47;
@@ -243,7 +245,7 @@ namespace VaccinationSystemManager.Views
             this.cmbSideEffectsList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSideEffectsList.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cmbSideEffectsList.FormattingEnabled = true;
-            this.cmbSideEffectsList.Location = new System.Drawing.Point(61, 282);
+            this.cmbSideEffectsList.Location = new System.Drawing.Point(61, 287);
             this.cmbSideEffectsList.Name = "cmbSideEffectsList";
             this.cmbSideEffectsList.Size = new System.Drawing.Size(462, 32);
             this.cmbSideEffectsList.TabIndex = 48;
@@ -277,7 +279,7 @@ namespace VaccinationSystemManager.Views
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSideEffectsCancel;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

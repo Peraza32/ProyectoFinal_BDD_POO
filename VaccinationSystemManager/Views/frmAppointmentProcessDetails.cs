@@ -13,7 +13,7 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmAppointmentProcessDetails : Form
     {
-        frmDashboard dashboard;
+        txtCabin dashboard;
         string dui;
         string name;
         string date;
@@ -23,7 +23,7 @@ namespace VaccinationSystemManager.Views
         VaccinationCenter vaccinationCenter;
         DoseType doseType;
 
-        public frmAppointmentProcessDetails(Appointment anAppointment, frmDashboard dash)
+        public frmAppointmentProcessDetails(Appointment anAppointment, txtCabin dash)
         {
             InitializeComponent();
             var db = new G4ProyectoDBContext();

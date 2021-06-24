@@ -12,8 +12,8 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmVerifyCitizen : Form
     {
-        frmDashboard dashboard;
-        public frmVerifyCitizen(frmDashboard dash)
+        txtCabin dashboard;
+        public frmVerifyCitizen(txtCabin dash)
         {
             dashboard = dash;
             InitializeComponent();
@@ -139,8 +139,10 @@ namespace VaccinationSystemManager.Views
                         db.Remove(db.Appointments.SingleOrDefault(u => u.Id == checkAppointment.Id));
                         db.SaveChanges();
 
-                        this.Close();
-                        //redireccionar a la ventana "agendar citas"
+                        // returns to "register appointment" form
+                        frmAppointmentProcess appointmentClient = new frmAppointmentProcess(dashboard);
+                        appointmentClient.Show();
+                        Close();
                     }
                 }
                 else
@@ -156,8 +158,10 @@ namespace VaccinationSystemManager.Views
                     "Vacunación COVID-19",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                this.Close();
-                //redireccionar a la ventana "agendar citas"
+                // returns to "register appointment" form
+                frmAppointmentProcess appointmentClient = new frmAppointmentProcess(dashboard);
+                appointmentClient.Show();
+                Close();
             }
 
         }

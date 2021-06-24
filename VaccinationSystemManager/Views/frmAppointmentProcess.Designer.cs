@@ -67,20 +67,20 @@ namespace VaccinationSystemManager.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(326, 43);
+            this.label1.Location = new System.Drawing.Point(249, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 34);
+            this.label1.Size = new System.Drawing.Size(42, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dui";
             // 
             // txtDui
             // 
             this.txtDui.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDui.Location = new System.Drawing.Point(422, 43);
+            this.txtDui.Location = new System.Drawing.Point(308, 43);
             this.txtDui.MaxLength = 9;
             this.txtDui.Name = "txtDui";
             this.txtDui.PlaceholderText = "_ _ _ _ _ _ _ _-_";
-            this.txtDui.Size = new System.Drawing.Size(231, 37);
+            this.txtDui.Size = new System.Drawing.Size(231, 31);
             this.txtDui.TabIndex = 1;
             this.txtDui.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDui.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDui_KeyPress);
@@ -90,18 +90,18 @@ namespace VaccinationSystemManager.Views
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(155, 102);
+            this.label2.Location = new System.Drawing.Point(118, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(226, 34);
+            this.label2.Size = new System.Drawing.Size(173, 26);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre completo";
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtName.Location = new System.Drawing.Point(422, 102);
+            this.txtName.Location = new System.Drawing.Point(308, 105);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(398, 37);
+            this.txtName.Size = new System.Drawing.Size(398, 31);
             this.txtName.TabIndex = 3;
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -110,18 +110,18 @@ namespace VaccinationSystemManager.Views
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(256, 220);
+            this.label3.Location = new System.Drawing.Point(195, 220);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 34);
+            this.label3.Size = new System.Drawing.Size(96, 26);
             this.label3.TabIndex = 6;
             this.label3.Text = "Dirección";
             // 
             // txtAddres
             // 
             this.txtAddres.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtAddres.Location = new System.Drawing.Point(422, 217);
+            this.txtAddres.Location = new System.Drawing.Point(308, 217);
             this.txtAddres.Name = "txtAddres";
-            this.txtAddres.Size = new System.Drawing.Size(398, 37);
+            this.txtAddres.Size = new System.Drawing.Size(398, 31);
             this.txtAddres.TabIndex = 7;
             this.txtAddres.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -130,20 +130,20 @@ namespace VaccinationSystemManager.Views
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(133, 277);
+            this.label4.Location = new System.Drawing.Point(101, 274);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(248, 34);
+            this.label4.Size = new System.Drawing.Size(190, 26);
             this.label4.TabIndex = 8;
             this.label4.Text = "Número de teléfono";
             // 
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPhoneNumber.Location = new System.Drawing.Point(422, 274);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(308, 271);
             this.txtPhoneNumber.MaxLength = 8;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.PlaceholderText = "_ _ _ _ - _ _ _ _";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(208, 37);
+            this.txtPhoneNumber.Size = new System.Drawing.Size(208, 31);
             this.txtPhoneNumber.TabIndex = 9;
             this.txtPhoneNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
@@ -151,10 +151,10 @@ namespace VaccinationSystemManager.Views
             // txtEMail
             // 
             this.txtEMail.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEMail.Location = new System.Drawing.Point(422, 335);
+            this.txtEMail.Location = new System.Drawing.Point(308, 335);
             this.txtEMail.Name = "txtEMail";
             this.txtEMail.PlaceholderText = "correo@example.com";
-            this.txtEMail.Size = new System.Drawing.Size(352, 37);
+            this.txtEMail.Size = new System.Drawing.Size(352, 31);
             this.txtEMail.TabIndex = 11;
             this.txtEMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -163,9 +163,9 @@ namespace VaccinationSystemManager.Views
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(31, 338);
+            this.label5.Location = new System.Drawing.Point(24, 338);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(350, 34);
+            this.label5.Size = new System.Drawing.Size(267, 26);
             this.label5.TabIndex = 10;
             this.label5.Text = "Correo electrónico (opcional)";
             // 
@@ -176,17 +176,17 @@ namespace VaccinationSystemManager.Views
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(42, 56);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(290, 34);
+            this.label6.Size = new System.Drawing.Size(222, 26);
             this.label6.TabIndex = 12;
             this.label6.Text = "Enfermedades crónicas";
             // 
             // txtDiseases
             // 
             this.txtDiseases.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDiseases.Location = new System.Drawing.Point(373, 53);
+            this.txtDiseases.Location = new System.Drawing.Point(284, 56);
             this.txtDiseases.Name = "txtDiseases";
             this.txtDiseases.PlaceholderText = "Enfermedad1,Enfermedad2,Enfermedad3";
-            this.txtDiseases.Size = new System.Drawing.Size(398, 37);
+            this.txtDiseases.Size = new System.Drawing.Size(398, 31);
             this.txtDiseases.TabIndex = 13;
             this.tltpInfo.SetToolTip(this.txtDiseases, "Ingrese cada elemento separado por una coma");
             // 
@@ -195,19 +195,19 @@ namespace VaccinationSystemManager.Views
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(131, 139);
+            this.label7.Location = new System.Drawing.Point(103, 139);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(201, 34);
+            this.label7.Size = new System.Drawing.Size(153, 26);
             this.label7.TabIndex = 14;
             this.label7.Text = "Discapacidades";
             // 
             // txtDisabilities
             // 
             this.txtDisabilities.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDisabilities.Location = new System.Drawing.Point(373, 139);
+            this.txtDisabilities.Location = new System.Drawing.Point(284, 139);
             this.txtDisabilities.Name = "txtDisabilities";
             this.txtDisabilities.PlaceholderText = "Discapacidad1,Discapacidad2,Discapacidad3";
-            this.txtDisabilities.Size = new System.Drawing.Size(398, 37);
+            this.txtDisabilities.Size = new System.Drawing.Size(398, 31);
             this.txtDisabilities.TabIndex = 15;
             this.tltpInfo.SetToolTip(this.txtDisabilities, "Ingrese cada elemento separado por una coma");
             // 
@@ -216,19 +216,20 @@ namespace VaccinationSystemManager.Views
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(20, 226);
+            this.label8.Location = new System.Drawing.Point(20, 223);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(312, 34);
+            this.label8.Size = new System.Drawing.Size(236, 26);
             this.label8.TabIndex = 16;
             this.label8.Text = "Número de identificación";
             // 
             // txtEssentialInstitution
             // 
             this.txtEssentialInstitution.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtEssentialInstitution.Location = new System.Drawing.Point(373, 223);
+            this.txtEssentialInstitution.Location = new System.Drawing.Point(284, 223);
             this.txtEssentialInstitution.Name = "txtEssentialInstitution";
-            this.txtEssentialInstitution.Size = new System.Drawing.Size(247, 37);
+            this.txtEssentialInstitution.Size = new System.Drawing.Size(247, 31);
             this.txtEssentialInstitution.TabIndex = 17;
+            this.txtEssentialInstitution.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEssentialInstitution_KeyPress);
             // 
             // btnCancel
             // 
@@ -238,7 +239,7 @@ namespace VaccinationSystemManager.Views
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(672, 678);
+            this.btnCancel.Location = new System.Drawing.Point(544, 678);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(208, 82);
             this.btnCancel.TabIndex = 1;
@@ -254,21 +255,22 @@ namespace VaccinationSystemManager.Views
             this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(905, 678);
+            this.btnRegister.Location = new System.Drawing.Point(808, 678);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(208, 82);
             this.btnRegister.TabIndex = 0;
             this.btnRegister.Text = "Registrar";
             this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnRegister.Leave += new System.EventHandler(this.btnRegister_Leave);
             // 
             // picLogo
             // 
             this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.picLogo.Image = global::VaccinationSystemManager.Properties.Resources.Logo_GOES2;
-            this.picLogo.Location = new System.Drawing.Point(454, 1);
+            this.picLogo.Location = new System.Drawing.Point(295, 1);
             this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(877, 193);
+            this.picLogo.Size = new System.Drawing.Size(1002, 204);
             this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picLogo.TabIndex = 21;
             this.picLogo.TabStop = false;
@@ -279,9 +281,9 @@ namespace VaccinationSystemManager.Views
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Sans", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(676, 166);
+            this.label9.Location = new System.Drawing.Point(627, 166);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(437, 49);
+            this.label9.Size = new System.Drawing.Size(356, 39);
             this.label9.TabIndex = 22;
             this.label9.Text = "REGISTRO DE CITA";
             // 
@@ -290,9 +292,9 @@ namespace VaccinationSystemManager.Views
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(133, 159);
+            this.label10.Location = new System.Drawing.Point(93, 159);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(262, 34);
+            this.label10.Size = new System.Drawing.Size(198, 26);
             this.label10.TabIndex = 4;
             this.label10.Text = "Fecha de nacimiento";
             // 
@@ -301,9 +303,9 @@ namespace VaccinationSystemManager.Views
             this.dtpBirthDate.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.epAppointment.SetIconAlignment(this.dtpBirthDate, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.dtpBirthDate.Location = new System.Drawing.Point(422, 159);
+            this.dtpBirthDate.Location = new System.Drawing.Point(308, 159);
             this.dtpBirthDate.Name = "dtpBirthDate";
-            this.dtpBirthDate.Size = new System.Drawing.Size(181, 37);
+            this.dtpBirthDate.Size = new System.Drawing.Size(181, 31);
             this.dtpBirthDate.TabIndex = 5;
             this.dtpBirthDate.Value = new System.DateTime(2021, 6, 21, 0, 0, 0, 0);
             // 
@@ -329,7 +331,7 @@ namespace VaccinationSystemManager.Views
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(46, 232);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(862, 417);
+            this.groupBox1.Size = new System.Drawing.Size(735, 417);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información personal";
@@ -344,19 +346,19 @@ namespace VaccinationSystemManager.Views
             this.groupBox2.Controls.Add(this.txtEssentialInstitution);
             this.groupBox2.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(944, 290);
+            this.groupBox2.Location = new System.Drawing.Point(808, 293);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(800, 303);
+            this.groupBox2.Size = new System.Drawing.Size(710, 303);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Grupo de prioridad";
             // 
             // frmAppointmentProcess
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(1779, 787);
+            this.ClientSize = new System.Drawing.Size(1566, 787);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label9);

@@ -63,6 +63,26 @@ namespace VaccinationSystemManager.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logo_covid {
+            get {
+                object obj = ResourceManager.GetObject("logo-covid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_covid2 {
+            get {
+                object obj = ResourceManager.GetObject("logo-covid2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_GOES2 {
             get {
                 object obj = ResourceManager.GetObject("Logo_GOES2", resourceCulture);

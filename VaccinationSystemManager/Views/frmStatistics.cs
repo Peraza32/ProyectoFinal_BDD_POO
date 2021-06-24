@@ -15,9 +15,13 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmStatistics : Form
     {
-        public frmStatistics()
+        txtCabin dashboard;
+
+        public frmStatistics(txtCabin dash)
         {
             InitializeComponent();
+
+            dashboard = dash;
         }
 
         private void frmStatistics_Load(object sender, EventArgs e)
@@ -97,7 +101,9 @@ namespace VaccinationSystemManager.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Devolver al Dashboard
+            //Returns to Dashboard
+            dashboard.Show();
+            this.Close();
         }
     }
 }
