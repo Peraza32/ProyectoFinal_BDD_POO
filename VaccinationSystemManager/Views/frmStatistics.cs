@@ -29,7 +29,7 @@ namespace VaccinationSystemManager.Views
             CreateStaticPieTab2();
 
             //Rectangle Bar Serie for Tab3 == "Eficiencia del proceso de vacunación"
-            //CreateStaticPieTab3();
+            CreateStaticPieTab3();
         }
 
         //Functions to create Charts
@@ -59,6 +59,45 @@ namespace VaccinationSystemManager.Views
 
             modelP2.Series.Add(seriesP2);
             plotView2.Model = modelP2;
+        }
+
+        public void CreateStaticPieTab3()
+        {
+            var modelP3 = new PlotModel { Title = "Eficiencia del proceso de vacunación" };
+
+            var barSeries = new BarSeries
+            {
+                ItemsSource = new List<BarItem>(new[]
+                {
+                    new BarItem{ Value = Controller.Statistics.CountEfficiency(1) },
+                    new BarItem{ Value = Controller.Statistics.CountEfficiency(2) },
+                    new BarItem{ Value = Controller.Statistics.CountEfficiency(3) },
+                }),
+
+                LabelPlacement = LabelPlacement.Inside,
+                LabelFormatString = "{0} Pacientes"
+            };
+
+            modelP3.Series.Add(barSeries);
+
+            modelP3.Axes.Add(new CategoryAxis
+            {
+                Position = AxisPosition.Left,
+                Key = "CakeAxis",
+                ItemsSource = new[]
+                {
+                    "Entre 30 minutos y 45 minutos",
+                    "Entre 45 minutos y una Hora",
+                    "Un Hora en adelante"
+                }
+            });
+
+            plotView3.Model = modelP3;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Devolver al Dashboard
         }
     }
 }
