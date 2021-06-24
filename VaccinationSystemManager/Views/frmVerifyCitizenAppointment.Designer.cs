@@ -29,6 +29,7 @@ namespace VaccinationSystemManager.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblVerifyCitizenTitle = new System.Windows.Forms.Label();
             this.lblVerifyCitizenDUI = new System.Windows.Forms.Label();
             this.txtVerifyCitizenDUI = new System.Windows.Forms.TextBox();
@@ -37,19 +38,21 @@ namespace VaccinationSystemManager.Views
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.epVerify = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epVerify)).BeginInit();
             this.SuspendLayout();
             // 
             // lblVerifyCitizenTitle
             // 
             this.lblVerifyCitizenTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblVerifyCitizenTitle.AutoSize = true;
-            this.lblVerifyCitizenTitle.Location = new System.Drawing.Point(64, 154);
+            this.lblVerifyCitizenTitle.Location = new System.Drawing.Point(86, 152);
             this.lblVerifyCitizenTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblVerifyCitizenTitle.Name = "lblVerifyCitizenTitle";
-            this.lblVerifyCitizenTitle.Size = new System.Drawing.Size(442, 26);
+            this.lblVerifyCitizenTitle.Size = new System.Drawing.Size(398, 31);
             this.lblVerifyCitizenTitle.TabIndex = 0;
             this.lblVerifyCitizenTitle.Text = "¡Veamos si ya llegó tu momento para vacunarte!";
             // 
@@ -57,9 +60,9 @@ namespace VaccinationSystemManager.Views
             // 
             this.lblVerifyCitizenDUI.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblVerifyCitizenDUI.AutoSize = true;
-            this.lblVerifyCitizenDUI.Location = new System.Drawing.Point(165, 227);
+            this.lblVerifyCitizenDUI.Location = new System.Drawing.Point(128, 219);
             this.lblVerifyCitizenDUI.Name = "lblVerifyCitizenDUI";
-            this.lblVerifyCitizenDUI.Size = new System.Drawing.Size(240, 26);
+            this.lblVerifyCitizenDUI.Size = new System.Drawing.Size(314, 34);
             this.lblVerifyCitizenDUI.TabIndex = 1;
             this.lblVerifyCitizenDUI.Text = "Ingresa tu número de DUI";
             // 
@@ -67,9 +70,10 @@ namespace VaccinationSystemManager.Views
             // 
             this.txtVerifyCitizenDUI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtVerifyCitizenDUI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.txtVerifyCitizenDUI.Location = new System.Drawing.Point(116, 272);
+            this.txtVerifyCitizenDUI.Location = new System.Drawing.Point(116, 269);
+            this.txtVerifyCitizenDUI.MaxLength = 9;
             this.txtVerifyCitizenDUI.Name = "txtVerifyCitizenDUI";
-            this.txtVerifyCitizenDUI.Size = new System.Drawing.Size(338, 31);
+            this.txtVerifyCitizenDUI.Size = new System.Drawing.Size(338, 37);
             this.txtVerifyCitizenDUI.TabIndex = 2;
             this.txtVerifyCitizenDUI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVerifyCitizenDUI_KeyPress);
             // 
@@ -104,6 +108,7 @@ namespace VaccinationSystemManager.Views
             this.btnVerifyCitizenSearch.Text = "Buscar";
             this.btnVerifyCitizenSearch.UseVisualStyleBackColor = false;
             this.btnVerifyCitizenSearch.Click += new System.EventHandler(this.btnVerifyCitizenSearch_Click);
+            this.btnVerifyCitizenSearch.Leave += new System.EventHandler(this.btnVerifyCitizenSearch_Leave);
             // 
             // pictureBox1
             // 
@@ -155,9 +160,13 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel2.Size = new System.Drawing.Size(451, 65);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
+            // epVerify
+            // 
+            this.epVerify.ContainerControl = this;
+            // 
             // frmVerifyCitizen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(582, 486);
@@ -173,6 +182,7 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.epVerify)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,5 +197,6 @@ namespace VaccinationSystemManager.Views
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.ErrorProvider epVerify;
     }
 }

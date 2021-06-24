@@ -46,7 +46,7 @@ namespace VaccinationSystemManager
                 //once the validators have passed it proceeds to sign in
                 if (login.SignIn())
                 {
-                    Views.txtCabin dashboard = new Views.txtCabin(db.Employees.Where(e => e.EmployeeUser == txtUsername.Text).FirstOrDefault(), db.Cabins.Where(c=>c.CabinAddress == cboCabin.Text).FirstOrDefault());
+                    Views.frmDashboard dashboard = new Views.frmDashboard(db.Employees.Where(e => e.EmployeeUser == txtUsername.Text).FirstOrDefault(), db.Cabins.Where(c=>c.CabinAddress == cboCabin.Text).FirstOrDefault(), this);
                     Hide();
                     dashboard.ShowDialog();
                 }

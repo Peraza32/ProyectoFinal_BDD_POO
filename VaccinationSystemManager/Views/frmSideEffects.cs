@@ -8,16 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VaccinationSystemManager.Controller.AppointmentController;
+using VaccinationSystemManager.Controller;
 
 namespace VaccinationSystemManager.Views
 {
     public partial class frmSideEffects : Form
     {
-        txtCabin dashboard;
+        frmDashboard dashboard;
 
         private Model.VaccinationProcess vaccinationProcess = new Model.VaccinationProcess();
         private Model.Appointment anAppointment = new Model.Appointment();
-        public frmSideEffects(Model.Appointment appointment, Model.VaccinationProcess process, txtCabin dash)
+        public frmSideEffects(Model.Appointment appointment, Model.VaccinationProcess process, frmDashboard dash)
         {
             InitializeComponent();
             dashboard = dash;
@@ -68,14 +69,18 @@ namespace VaccinationSystemManager.Views
             //Check if it's necesary to schedule a new appointment for dose 2
             if (vaccinationProcess.ShotType == 1)
             {
-                AppointmentMaker appointmentManager = new AppointmentMaker(db);
+                AppointmentProxy appointmentManager = new AppointmentProxy(db);
+
+                DateTime appointmentDate = appointmentManager.GenerateDate(UserInformation.GetVaccinationCenter(anAppointment.IdCenter), UserInformation.GetDoseType(2));
 
                 Model.Appointment currentAppointment = appointmentManager.MakeAppointment(
-                                                                                            db.DoseTypes.Where(d => d.Id == 2).FirstOrDefault(),
-                                                                                            db.Citizens.Where(c => c.Dui == anAppointment.DuiCitizen).FirstOrDefault(),
-                                                                                            dashboard.LoggedEmployee,
-                                                                                            anAppointment.IdCenter
-                                                                                         );
+                                                                                UserInformation.GetDoseType(2),
+                                                                                UserInformation.GetCitizen(anAppointment.DuiCitizen),
+                                                                                dashboard.LoggedEmployee,
+                                                                                anAppointment.IdCenter,
+                                                                                appointmentDate
+                                                                             );
+
 
                 frmAppointmentProcessDetails details = new frmAppointmentProcessDetails(currentAppointment, dashboard);
 

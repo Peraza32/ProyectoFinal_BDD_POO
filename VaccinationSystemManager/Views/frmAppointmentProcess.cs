@@ -15,8 +15,8 @@ namespace VaccinationSystemManager.Views
 {
     public partial class frmAppointmentProcess : Form
     {
-        txtCabin dashboard;
-        public frmAppointmentProcess(txtCabin lastForm)
+        frmDashboard dashboard;
+        public frmAppointmentProcess(frmDashboard lastForm)
         {
             dashboard = lastForm;
             InitializeComponent();
@@ -143,9 +143,14 @@ namespace VaccinationSystemManager.Views
                         Random r = new Random();
                         int idVacCenter = r.Next(1, 7);
 
-                        AppointmentMaker appointmentManager = new AppointmentMaker(db);
-                        //saves and shows the created appointment
-                        Appointment createdAppointment = appointmentManager.MakeAppointment(db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault(), newCitizen, dashboard.LoggedEmployee, idVacCenter);
+                        AppointmentProxy appointmentManager = new AppointmentProxy(db);
+
+                        //Appointment date creation
+                        DateTime appointmentDate = appointmentManager.GenerateDate(db.VaccinationCenters.Where(v => v.Id == idVacCenter).FirstOrDefault(), db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault());
+
+
+                        //Appointment creaton, built -in valdation for already existing appointment
+                        Appointment createdAppointment = appointmentManager.MakeAppointment(db.DoseTypes.Where(d => d.Id == 1).FirstOrDefault(), newCitizen, dashboard.LoggedEmployee, idVacCenter, appointmentDate);
 
                         frmAppointmentProcessDetails frmAppointmentProcessDetails = new frmAppointmentProcessDetails(createdAppointment, dashboard);
                         frmAppointmentProcessDetails.Show();

@@ -13,13 +13,13 @@ using VaccinationSystemManager.Model;
 
 namespace VaccinationSystemManager.Views
 {
-    public partial class txtCabin : Form
+    public partial class frmDashboard : Form
     {
         public Cabin LoggedCabin { get; }
         public Employee LoggedEmployee { get; }
         public frmLogin Login { get; }
 
-        public txtCabin(Employee currentEmployee, Cabin currentCabin, frmLogin login )
+        public frmDashboard(Employee currentEmployee, Cabin currentCabin, frmLogin login )
         {
             Login = login;
             LoggedCabin = currentCabin;
@@ -47,12 +47,13 @@ namespace VaccinationSystemManager.Views
             Hide();
         }
 
-        private void btnStatistics_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-
+            Login.Show();
+            Close();
         }
 
-        private void btnLogOut_Click(object sender, EventArgs e)
+        private void btnStatistic_Click(object sender, EventArgs e)
         {
 
         }
