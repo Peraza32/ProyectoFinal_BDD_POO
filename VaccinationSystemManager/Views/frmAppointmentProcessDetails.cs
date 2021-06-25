@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VaccinationSystemManager.Model;
+using VaccinationSystemManager.Controller;
+using VaccinationSystemManager.Controller.AppointmentController;
 
 namespace VaccinationSystemManager.Views
 {
@@ -22,28 +24,33 @@ namespace VaccinationSystemManager.Views
         Citizen citizen;
         VaccinationCenter vaccinationCenter;
         DoseType doseType;
+        Appointment actualAppointment;
 
         public frmAppointmentProcessDetails(Appointment anAppointment, frmDashboard dash)
         {
             InitializeComponent();
-            var db = new G4ProyectoDBContext();
+            
 
             dashboard = dash;
 
             // recovers the citizen from BDD
-            citizen = db.Citizens.SingleOrDefault(c => c.Dui == anAppointment.DuiCitizen);
+            citizen = UserInformation.GetCitizen(anAppointment.DuiCitizen);
+            
 
             // recovers the vaccination center from BDD
-            vaccinationCenter = db.VaccinationCenters.SingleOrDefault(vc => vc.Id == anAppointment.IdCenter);
+            vaccinationCenter = UserInformation.GetVaccinationCenter(anAppointment.IdCenter);
+
 
             // recovers the dose type from BDD
-            doseType = db.DoseTypes.SingleOrDefault(dt => dt.Id == anAppointment.ShotType);
+            doseType = UserInformation.GetDoseType(anAppointment.ShotType);
+
 
             dui = anAppointment.DuiCitizen;
             name = citizen.CitizenName;
             date = anAppointment.AppointmentDate.ToString("dd-MM-yyyy");
             hour = anAppointment.AppointmentDate.ToString("hh:mm tt");
             vaccinationCenterName = vaccinationCenter.CenterName;
+            actualAppointment = anAppointment;
         }
 
         private void frmAppointmentProcessDetails_Load(object sender, EventArgs e)
@@ -63,6 +70,13 @@ namespace VaccinationSystemManager.Views
         {
             dashboard.Show();
             Close();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            G4ProyectoDBContext db = new G4ProyectoDBContext();
+            AppointmentProxy appointment = new AppointmentProxy(db);
+            appointment.SavePDF(citizen,actualAppointment);
         }
     }
 }

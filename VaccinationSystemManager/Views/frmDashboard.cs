@@ -59,5 +59,13 @@ namespace VaccinationSystemManager.Views
             statistics.Show();
             Hide();
         }
+
+        private void btnShowAppointments_Click(object sender, EventArgs e)
+        {
+            frmViewAppointment views = new frmViewAppointment(this);
+            views.Show();
+            Hide();
+
+        }
     }
 }

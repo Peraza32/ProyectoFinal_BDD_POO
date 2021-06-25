@@ -30,8 +30,6 @@ namespace VaccinationSystemManager.Views
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblHour = new System.Windows.Forms.Label();
-            this.lblCitizenName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,8 +42,10 @@ namespace VaccinationSystemManager.Views
             this.lblVaccinationCenter = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.lblDoseType = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.lblHour = new System.Windows.Forms.Label();
+            this.lblCitizenName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -92,30 +92,6 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.609828F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(661, 640);
             this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // lblHour
-            // 
-            this.lblHour.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblHour.AutoSize = true;
-            this.lblHour.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblHour.ForeColor = System.Drawing.Color.White;
-            this.lblHour.Location = new System.Drawing.Point(201, 359);
-            this.lblHour.Name = "lblHour";
-            this.lblHour.Size = new System.Drawing.Size(125, 34);
-            this.lblHour.TabIndex = 31;
-            this.lblHour.Text = "08:00:00";
-            // 
-            // lblCitizenName
-            // 
-            this.lblCitizenName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblCitizenName.AutoSize = true;
-            this.lblCitizenName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCitizenName.ForeColor = System.Drawing.Color.White;
-            this.lblCitizenName.Location = new System.Drawing.Point(201, 277);
-            this.lblCitizenName.Name = "lblCitizenName";
-            this.lblCitizenName.Size = new System.Drawing.Size(347, 30);
-            this.lblCitizenName.TabIndex = 27;
-            this.lblCitizenName.Text = "Eddy René Barahona Hernández";
             // 
             // pictureBox1
             // 
@@ -253,6 +229,7 @@ namespace VaccinationSystemManager.Views
             this.btnPrint.TabIndex = 34;
             this.btnPrint.Text = "Imprimir";
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // label6
             // 
@@ -265,6 +242,18 @@ namespace VaccinationSystemManager.Views
             this.label6.Size = new System.Drawing.Size(78, 34);
             this.label6.TabIndex = 35;
             this.label6.Text = "Dosis";
+            // 
+            // lblDoseType
+            // 
+            this.lblDoseType.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDoseType.AutoSize = true;
+            this.lblDoseType.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDoseType.ForeColor = System.Drawing.Color.White;
+            this.lblDoseType.Location = new System.Drawing.Point(201, 443);
+            this.lblDoseType.Name = "lblDoseType";
+            this.lblDoseType.Size = new System.Drawing.Size(179, 34);
+            this.lblDoseType.TabIndex = 36;
+            this.lblDoseType.Text = "Primera Dosis";
             // 
             // btnClose
             // 
@@ -283,17 +272,29 @@ namespace VaccinationSystemManager.Views
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblDoseType
+            // lblHour
             // 
-            this.lblDoseType.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblDoseType.AutoSize = true;
-            this.lblDoseType.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDoseType.ForeColor = System.Drawing.Color.White;
-            this.lblDoseType.Location = new System.Drawing.Point(201, 443);
-            this.lblDoseType.Name = "lblDoseType";
-            this.lblDoseType.Size = new System.Drawing.Size(179, 34);
-            this.lblDoseType.TabIndex = 36;
-            this.lblDoseType.Text = "Primera Dosis";
+            this.lblHour.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHour.AutoSize = true;
+            this.lblHour.Font = new System.Drawing.Font("Franklin Gothic Medium", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblHour.ForeColor = System.Drawing.Color.White;
+            this.lblHour.Location = new System.Drawing.Point(201, 359);
+            this.lblHour.Name = "lblHour";
+            this.lblHour.Size = new System.Drawing.Size(125, 34);
+            this.lblHour.TabIndex = 31;
+            this.lblHour.Text = "08:00:00";
+            // 
+            // lblCitizenName
+            // 
+            this.lblCitizenName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblCitizenName.AutoSize = true;
+            this.lblCitizenName.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblCitizenName.ForeColor = System.Drawing.Color.White;
+            this.lblCitizenName.Location = new System.Drawing.Point(201, 277);
+            this.lblCitizenName.Name = "lblCitizenName";
+            this.lblCitizenName.Size = new System.Drawing.Size(347, 30);
+            this.lblCitizenName.TabIndex = 27;
+            this.lblCitizenName.Text = "Eddy René Barahona Hernández";
             // 
             // frmAppointmentProcessDetails
             // 

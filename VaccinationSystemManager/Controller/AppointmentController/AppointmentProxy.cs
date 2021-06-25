@@ -7,20 +7,20 @@ using VaccinationSystemManager.Model;
 
 namespace VaccinationSystemManager.Controller.AppointmentController
 {
-    class AppointmentProxy : IAppointment
+    class AppointmentProxy : IAppointment, IPDFCreator
     {
 
         
-        private AppointmentMaker appointment;
+        private AppointmentMaker appointmentMaker;
 
         public AppointmentProxy(G4ProyectoDBContext db)
         {
-            appointment = new AppointmentMaker(db);
+            appointmentMaker = new AppointmentMaker(db);
         }
 
         public Model.Appointment MakeAppointment(DoseType shotType, Citizen person, Employee manager, int idVaccinationCenter, DateTime date)
         {
-           return appointment.MakeAppointment(shotType, person, manager, idVaccinationCenter,  date);
+           return appointmentMaker.MakeAppointment(shotType, person, manager, idVaccinationCenter,  date);
         }
 
        
@@ -44,9 +44,18 @@ namespace VaccinationSystemManager.Controller.AppointmentController
             Model.Appointment newAppointment = new Model.Appointment();
             
 
-            appointmentDate = appointment.GetAvailability(appointmentDate, location);
+            appointmentDate = appointmentMaker.GetAvailability(appointmentDate, location);
 
             return appointmentDate;
+        }
+
+
+        public void SavePDF(Citizen userName, Appointment appointment)
+        {
+
+
+           appointmentMaker.SavePDF(userName,appointment);
+
         }
     }
 }
