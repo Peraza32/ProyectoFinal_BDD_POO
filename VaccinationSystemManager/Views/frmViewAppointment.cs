@@ -75,9 +75,12 @@ namespace VaccinationSystemManager.Views
 
         private void PopulateDataGrid(List<DataGridObject> info)
         {
-
+            
+            
+            BindingList<DataGridObject> source = new BindingList<DataGridObject>(info);
             dtgAppointments.DataSource = null;
-            dtgAppointments.DataSource = info;
+            dtgAppointments.DataSource = source;
+            
             dtgAppointments.RowTemplate.ReadOnly = true;
             dtgAppointments.ForeColor = Color.Black;
 
@@ -85,20 +88,37 @@ namespace VaccinationSystemManager.Views
 
         private void dtgAppointments_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex != -1)
+            if (e.RowIndex != -1)
             {
 
                 DataGridObject data = new DataGridObject();
-                data = dtgAppointments.SelectedRows[0].DataBoundItem as DataGridObject;
 
-                txtDui.Text = data.Dui;
-                txtPaciente.Text = data.Name;
-                txtDosis.Text = data.Dose;
-                dtpFecha.Value = data.Date;
+                try
+                {
+                    data = dtgAppointments.SelectedRows[e.RowIndex].DataBoundItem as DataGridObject;
 
-                
+                    txtDui.Text = data.Dui;
+                    txtPaciente.Text = data.Name;
+                    txtDosis.Text = data.Dose;
+                    dtpFecha.Value = data.Date;
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
 
             }
+            else
+                MessageBox.Show(e.RowIndex.ToString());
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+
+            dashboard.Show();
+            this.Close();
         }
     }
 }

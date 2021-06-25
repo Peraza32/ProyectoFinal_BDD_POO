@@ -93,7 +93,8 @@ namespace VaccinationSystemManager.Controller.AppointmentController
         public void SavePDF(Citizen patient, Appointment appointment)
         {
             //Create the path and the file in order to write the pdf
-            PdfDocument pdfDocument = new PdfDocument(new PdfWriter(new FileStream((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)) + "/" + patient.CitizenName + "_" + appointment.DuiCitizen + ".pdf", FileMode.Create, FileAccess.Write)));
+            PdfDocument pdfDocument = new PdfDocument(new PdfWriter(new FileStream((Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)) + "/" + patient.CitizenName + "_" + appointment.DuiCitizen + "Dosis " + appointment.ShotType.ToString() + ".pdf", FileMode.Create, FileAccess.Write)));
+
             using (Document document = new Document(pdfDocument, PageSize.A4))
             {
                 //Setting margins 
@@ -120,14 +121,14 @@ namespace VaccinationSystemManager.Controller.AppointmentController
                 document.Add(ls);
 
                 Table table = new Table(2);
-                table.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER);
+                table.SetHorizontalAlignment(iText.Layout.Properties.HorizontalAlignment.CENTER).SetMarginTop(50);
                 table.AddCell(new Cell().SetTextAlignment(TextAlignment.JUSTIFIED)
                                         .Add(new Paragraph("Fecha de la cita"))
-                                        .SetBorder(Border.NO_BORDER));
+                                        );
 
                 table.AddCell(new Cell().SetTextAlignment(TextAlignment.JUSTIFIED)
                                         .Add(new Paragraph(appointment.AppointmentDate.ToString()))
-                                        .SetBorder(Border.NO_BORDER));
+                                        );
 
 
                 table.AddCell(new Cell().SetTextAlignment(TextAlignment.JUSTIFIED)
@@ -156,7 +157,7 @@ namespace VaccinationSystemManager.Controller.AppointmentController
                 table.AddCell(new Cell().SetTextAlignment(TextAlignment.JUSTIFIED)
                                         .Add(new Paragraph(UserInformation.GetDoseType(appointment.ShotType).ShotType)
                                         .SetBorder(Border.NO_BORDER)));
-                document.Add(table);
+                document.Add(table.SetBorder(Border.NO_BORDER));
                 document.Close();
 
 

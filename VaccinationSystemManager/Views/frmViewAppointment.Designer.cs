@@ -34,6 +34,7 @@ namespace VaccinationSystemManager.Views
             this.txtDosis = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dtgAppointments = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.txtPaciente = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@ namespace VaccinationSystemManager.Views
             this.label2 = new System.Windows.Forms.Label();
             this.txtDui = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnBeginProcess = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -51,7 +51,8 @@ namespace VaccinationSystemManager.Views
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cboTimeFrame = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnBeginProcess = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAppointments)).BeginInit();
@@ -135,6 +136,18 @@ namespace VaccinationSystemManager.Views
             this.label4.TabIndex = 3;
             this.label4.Text = "Tipo Dosis";
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpFecha.Enabled = false;
+            this.dtpFecha.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(222, 16);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(544, 31);
+            this.dtpFecha.TabIndex = 6;
+            this.dtpFecha.Value = new System.DateTime(2021, 6, 25, 0, 0, 0, 0);
+            // 
             // dtgAppointments
             // 
             this.dtgAppointments.AllowUserToAddRows = false;
@@ -215,29 +228,17 @@ namespace VaccinationSystemManager.Views
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.btnBeginProcess, 0, 0);
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.btnBeginProcess, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnRegresar, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(777, 531);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(769, 126);
             this.tableLayoutPanel5.TabIndex = 27;
-            // 
-            // btnBeginProcess
-            // 
-            this.btnBeginProcess.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBeginProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
-            this.btnBeginProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBeginProcess.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBeginProcess.Location = new System.Drawing.Point(231, 32);
-            this.btnBeginProcess.Name = "btnBeginProcess";
-            this.btnBeginProcess.Size = new System.Drawing.Size(307, 61);
-            this.btnBeginProcess.TabIndex = 1;
-            this.btnBeginProcess.Text = "Iniciar Proceso de Vacunación";
-            this.btnBeginProcess.UseVisualStyleBackColor = false;
-            this.btnBeginProcess.Click += new System.EventHandler(this.btnBeginProcess_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -353,17 +354,32 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 100);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // dtpFecha
+            // btnRegresar
             // 
-            this.dtpFecha.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpFecha.Enabled = false;
-            this.dtpFecha.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(222, 16);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(544, 31);
-            this.dtpFecha.TabIndex = 6;
-            this.dtpFecha.Value = new System.DateTime(2021, 6, 25, 0, 0, 0, 0);
+            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegresar.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegresar.Location = new System.Drawing.Point(38, 32);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(307, 61);
+            this.btnRegresar.TabIndex = 2;
+            this.btnRegresar.Text = "Regresar a Dashboard";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // btnBeginProcess
+            // 
+            this.btnBeginProcess.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBeginProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
+            this.btnBeginProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBeginProcess.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBeginProcess.Location = new System.Drawing.Point(423, 32);
+            this.btnBeginProcess.Name = "btnBeginProcess";
+            this.btnBeginProcess.Size = new System.Drawing.Size(307, 61);
+            this.btnBeginProcess.TabIndex = 3;
+            this.btnBeginProcess.Text = "Iniciar Proceso de Vacunación";
+            this.btnBeginProcess.UseVisualStyleBackColor = false;
             // 
             // frmViewAppointment
             // 
@@ -412,12 +428,13 @@ namespace VaccinationSystemManager.Views
         private System.Windows.Forms.TextBox txtDui;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.Button btnBeginProcess;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboTimeFrame;
         private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Button btnBeginProcess;
     }
 }
