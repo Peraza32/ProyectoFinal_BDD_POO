@@ -29,6 +29,7 @@ namespace VaccinationSystemManager.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.txtDosis = new System.Windows.Forms.TextBox();
@@ -42,6 +43,8 @@ namespace VaccinationSystemManager.Views
             this.label2 = new System.Windows.Forms.Label();
             this.txtDui = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnBeginProcess = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -51,8 +54,7 @@ namespace VaccinationSystemManager.Views
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cboTimeFrame = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnRegresar = new System.Windows.Forms.Button();
-            this.btnBeginProcess = new System.Windows.Forms.Button();
+            this.epVerify = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAppointments)).BeginInit();
@@ -62,6 +64,7 @@ namespace VaccinationSystemManager.Views
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epVerify)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -84,7 +87,7 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1549, 796);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1586, 796);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -96,22 +99,22 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.dtpFecha, 1, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(777, 399);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(796, 399);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(769, 126);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(750, 126);
             this.tableLayoutPanel4.TabIndex = 25;
             // 
             // txtDosis
             // 
             this.txtDosis.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDosis.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtDosis.Location = new System.Drawing.Point(222, 79);
+            this.txtDosis.Location = new System.Drawing.Point(242, 79);
             this.txtDosis.Name = "txtDosis";
             this.txtDosis.ReadOnly = true;
-            this.txtDosis.Size = new System.Drawing.Size(544, 31);
+            this.txtDosis.Size = new System.Drawing.Size(480, 31);
             this.txtDosis.TabIndex = 5;
             // 
             // label3
@@ -119,7 +122,7 @@ namespace VaccinationSystemManager.Views
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(44, 18);
+            this.label3.Location = new System.Drawing.Point(41, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 26);
             this.label3.TabIndex = 2;
@@ -130,7 +133,7 @@ namespace VaccinationSystemManager.Views
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(57, 81);
+            this.label4.Location = new System.Drawing.Point(55, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 26);
             this.label4.TabIndex = 3;
@@ -142,9 +145,9 @@ namespace VaccinationSystemManager.Views
             this.dtpFecha.Enabled = false;
             this.dtpFecha.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(222, 16);
+            this.dtpFecha.Location = new System.Drawing.Point(242, 16);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(544, 31);
+            this.dtpFecha.Size = new System.Drawing.Size(480, 31);
             this.dtpFecha.TabIndex = 6;
             this.dtpFecha.Value = new System.DateTime(2021, 6, 25, 0, 0, 0, 0);
             // 
@@ -161,10 +164,10 @@ namespace VaccinationSystemManager.Views
             this.dtgAppointments.ReadOnly = true;
             this.tableLayoutPanel1.SetRowSpan(this.dtgAppointments, 3);
             this.dtgAppointments.RowTemplate.Height = 25;
-            this.dtgAppointments.Size = new System.Drawing.Size(768, 390);
+            this.dtgAppointments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgAppointments.Size = new System.Drawing.Size(787, 390);
             this.dtgAppointments.TabIndex = 23;
             this.dtgAppointments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAppointments_CellContentClick);
-            this.dtgAppointments.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgAppointments_CellContentDoubleClick);
             // 
             // tableLayoutPanel2
             // 
@@ -176,22 +179,22 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.txtDui, 1, 0);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(777, 267);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(796, 267);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(769, 126);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(750, 126);
             this.tableLayoutPanel2.TabIndex = 24;
             // 
             // txtPaciente
             // 
             this.txtPaciente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPaciente.Location = new System.Drawing.Point(222, 79);
+            this.txtPaciente.Location = new System.Drawing.Point(242, 79);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.ReadOnly = true;
-            this.txtPaciente.Size = new System.Drawing.Size(544, 31);
+            this.txtPaciente.Size = new System.Drawing.Size(480, 31);
             this.txtPaciente.TabIndex = 3;
             // 
             // label1
@@ -199,7 +202,7 @@ namespace VaccinationSystemManager.Views
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(87, 18);
+            this.label1.Location = new System.Drawing.Point(85, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 26);
             this.label1.TabIndex = 0;
@@ -210,7 +213,7 @@ namespace VaccinationSystemManager.Views
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(64, 81);
+            this.label2.Location = new System.Drawing.Point(61, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 26);
             this.label2.TabIndex = 1;
@@ -219,10 +222,10 @@ namespace VaccinationSystemManager.Views
             // txtDui
             // 
             this.txtDui.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDui.Location = new System.Drawing.Point(222, 16);
+            this.txtDui.Location = new System.Drawing.Point(242, 16);
             this.txtDui.Name = "txtDui";
             this.txtDui.ReadOnly = true;
-            this.txtDui.Size = new System.Drawing.Size(544, 31);
+            this.txtDui.Size = new System.Drawing.Size(480, 31);
             this.txtDui.TabIndex = 2;
             // 
             // tableLayoutPanel5
@@ -233,12 +236,40 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.btnBeginProcess, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.btnRegresar, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(777, 531);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(805, 531);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(769, 126);
             this.tableLayoutPanel5.TabIndex = 27;
+            // 
+            // btnBeginProcess
+            // 
+            this.btnBeginProcess.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBeginProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
+            this.btnBeginProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBeginProcess.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnBeginProcess.Location = new System.Drawing.Point(423, 32);
+            this.btnBeginProcess.Name = "btnBeginProcess";
+            this.btnBeginProcess.Size = new System.Drawing.Size(307, 61);
+            this.btnBeginProcess.TabIndex = 3;
+            this.btnBeginProcess.Text = "Iniciar Proceso de Vacunación";
+            this.btnBeginProcess.UseVisualStyleBackColor = false;
+            this.btnBeginProcess.Click += new System.EventHandler(this.btnBeginProcess_Click_1);
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegresar.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRegresar.Location = new System.Drawing.Point(38, 32);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(307, 61);
+            this.btnRegresar.TabIndex = 2;
+            this.btnRegresar.Text = "Regresar a Dashboard";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // tableLayoutPanel6
             // 
@@ -354,43 +385,21 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 100);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // btnRegresar
+            // epVerify
             // 
-            this.btnRegresar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegresar.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRegresar.Location = new System.Drawing.Point(38, 32);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(307, 61);
-            this.btnRegresar.TabIndex = 2;
-            this.btnRegresar.Text = "Regresar a Dashboard";
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // btnBeginProcess
-            // 
-            this.btnBeginProcess.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnBeginProcess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
-            this.btnBeginProcess.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBeginProcess.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBeginProcess.Location = new System.Drawing.Point(423, 32);
-            this.btnBeginProcess.Name = "btnBeginProcess";
-            this.btnBeginProcess.Size = new System.Drawing.Size(307, 61);
-            this.btnBeginProcess.TabIndex = 3;
-            this.btnBeginProcess.Text = "Iniciar Proceso de Vacunación";
-            this.btnBeginProcess.UseVisualStyleBackColor = false;
+            this.epVerify.ContainerControl = this;
             // 
             // frmViewAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
-            this.ClientSize = new System.Drawing.Size(1550, 795);
+            this.ClientSize = new System.Drawing.Size(1586, 795);
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmViewAppointment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmViewAppointment";
             this.Load += new System.EventHandler(this.frmViewAppointment_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -406,6 +415,7 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.epVerify)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -436,5 +446,6 @@ namespace VaccinationSystemManager.Views
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnBeginProcess;
+        private System.Windows.Forms.ErrorProvider epVerify;
     }
 }
