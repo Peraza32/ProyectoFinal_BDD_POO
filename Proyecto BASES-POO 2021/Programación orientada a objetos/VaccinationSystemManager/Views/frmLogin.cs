@@ -49,6 +49,10 @@ namespace VaccinationSystemManager
                     Views.frmDashboard dashboard = new Views.frmDashboard(db.Employees.Where(e => e.EmployeeUser == txtUsername.Text).FirstOrDefault(), db.Cabins.Where(c=>c.CabinAddress == cboCabin.Text).FirstOrDefault(), this);
                     Hide();
                     dashboard.ShowDialog();
+                    txtUsername.Clear();
+                    txtPassword.Clear();
+                    cboCabin.SelectedIndex = 0;
+                    txtUsername.Focus();
                 }
             }
             catch(FormInputException frmEx)

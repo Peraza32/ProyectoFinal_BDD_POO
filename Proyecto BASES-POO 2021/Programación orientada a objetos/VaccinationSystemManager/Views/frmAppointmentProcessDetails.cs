@@ -64,6 +64,8 @@ namespace VaccinationSystemManager.Views
                 lblDoseType.Text = "Primera Dosis";
             else
                 lblDoseType.Text = "Segunda Dosis";
+
+            lblVaccinationCenter.Text = vaccinationCenterName;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -77,6 +79,12 @@ namespace VaccinationSystemManager.Views
             G4ProyectoDBContext db = new G4ProyectoDBContext();
             AppointmentProxy appointment = new AppointmentProxy(db);
             appointment.SavePDF(citizen,actualAppointment);
+            MessageBox.Show("PDF generado con éxito! Puedes encontrarlo en la carpeta \"Documentos\" con " +
+                              "el nombre y dui del paciente",
+                              "Vacunación COVID-19",
+                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dashboard.Show();
+            Close();
         }
     }
 }

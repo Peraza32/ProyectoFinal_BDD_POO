@@ -122,7 +122,7 @@ namespace VaccinationSystemManager.Views
             this.lblCurrenEmployee.AutoSize = true;
             this.lblCurrenEmployee.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCurrenEmployee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
-            this.lblCurrenEmployee.Location = new System.Drawing.Point(156, 34);
+            this.lblCurrenEmployee.Location = new System.Drawing.Point(156, 24);
             this.lblCurrenEmployee.Name = "lblCurrenEmployee";
             this.lblCurrenEmployee.Size = new System.Drawing.Size(118, 26);
             this.lblCurrenEmployee.TabIndex = 4;
@@ -151,7 +151,7 @@ namespace VaccinationSystemManager.Views
             this.lblCabin.AutoSize = true;
             this.lblCabin.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCabin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
-            this.lblCabin.Location = new System.Drawing.Point(156, 130);
+            this.lblCabin.Location = new System.Drawing.Point(156, 98);
             this.lblCabin.Name = "lblCabin";
             this.lblCabin.Size = new System.Drawing.Size(217, 26);
             this.lblCabin.TabIndex = 6;
@@ -207,7 +207,7 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(513, 191);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(513, 149);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // label2
@@ -216,7 +216,7 @@ namespace VaccinationSystemManager.Views
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
-            this.label2.Location = new System.Drawing.Point(72, 130);
+            this.label2.Location = new System.Drawing.Point(72, 98);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 26);
             this.label2.TabIndex = 11;
@@ -228,7 +228,7 @@ namespace VaccinationSystemManager.Views
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
-            this.label1.Location = new System.Drawing.Point(44, 34);
+            this.label1.Location = new System.Drawing.Point(44, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 26);
             this.label1.TabIndex = 10;

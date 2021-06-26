@@ -197,11 +197,6 @@ namespace VaccinationSystemManager.Views
             this.nudAppearanceTime.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nudAppearanceTime.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.nudAppearanceTime.Location = new System.Drawing.Point(3, 3);
-            this.nudAppearanceTime.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
             this.nudAppearanceTime.Minimum = new decimal(new int[] {
             1,
             0,

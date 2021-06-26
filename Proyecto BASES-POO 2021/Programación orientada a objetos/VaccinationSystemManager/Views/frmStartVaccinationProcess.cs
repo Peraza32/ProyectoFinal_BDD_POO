@@ -37,10 +37,16 @@ namespace VaccinationSystemManager.Views
             lblCitizenName.Text = vaccinationCitizen.CitizenName;
             lblAddress.Text = vaccinationCitizen.CitizenAddress;
             lblPhoneNumber.Text = vaccinationCitizen.PhoneNumber;
-            lblEMail.Text = vaccinationCitizen.EMail;
-            lblIdentifiationNumber.Text = vaccinationCitizen.IdentifierNumber;
 
-            //Select Dose type from db
+            if(vaccinationCitizen.EMail == null)
+            {
+                lblEMail.Text = "No posee correo electrónico";
+            }
+            else
+            {
+                lblEMail.Text = vaccinationCitizen.EMail;
+            }
+
             var db = new Model.G4ProyectoDBContext();
 
             // recovers the dose type from database
@@ -49,6 +55,16 @@ namespace VaccinationSystemManager.Views
                 .FirstOrDefault();
 
             lblDoseType.Text = vaccinationDose.ShotType;
+
+            // set identifier number in label
+            if(vaccinationCitizen.IdentifierNumber == null)
+            {
+                lblIdentifiationNumber.Text = "No pertenece a una institución esencial";
+            }
+            else
+            {
+                lblIdentifiationNumber.Text = vaccinationCitizen.IdentifierNumber;
+            }
 
             // recovers the diseasies from database
             var diseasies = db.Diseases
