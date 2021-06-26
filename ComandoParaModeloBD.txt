@@ -1,4 +1,0 @@
-dotnet ef dbcontext scaffold "Server=.\SQLEXPRESS; Database=G4ProyectoDB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Model
-
-En caso de necesitar re-copiar la bd en el proyecto 
-dotnet ef dbcontext scaffold Server=.\SQLEXPRESS; Database=G4ProyectoDB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Model --force

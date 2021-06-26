@@ -22,7 +22,7 @@ CREATE TABLE CIUDADANO(
 	numero_identificador VARCHAR(50),
 	telefono CHAR(12) NOT NULL,
 	direccion VARCHAR(100) NOT NULL,
-	correo VARCHAR(25)
+	correo VARCHAR(100)
 );
 
 CREATE TABLE TIPO_EMPLEADO(
@@ -98,15 +98,14 @@ CREATE TABLE SESION(
 	id_cabina INT NOT NULL FOREIGN KEY REFERENCES CABINA(id)
 );
 
--- Need a PK-FK
 CREATE TABLE EFECTO_PRESENTADO(
-	id_proceso_vacunacion INT NOT NULL,
-	id_efecto_secundario INT NOT NULL,
-	CONSTRAINT PK_efecto_presentado PRIMARY KEY (id_proceso_vacunacion, id_efecto_secundario),
-	FOREIGN KEY (id_proceso_vacunacion) REFERENCES PROCESO_DE_VACUNACION(id),
-	FOREIGN KEY (id_efecto_secundario) REFERENCES EFECTO_SECUNDARIO(id)
+	id INT PRIMARY KEY IDENTITY,
+	tiempo_aparicion INT NOT NULL,
+	id_proceso_vacunacion INT NOT NULL FOREIGN KEY REFERENCES PROCESO_DE_VACUNACION(id),
+	id_efecto_secundario INT NOT NULL FOREIGN KEY REFERENCES EFECTO_SECUNDARIO(id)
 );
 
+-- Need a PK-FK
 CREATE TABLE ENCARGADO(
 	id_empleado INT NOT NULL,
 	id_cabina INT NOT NULL,
