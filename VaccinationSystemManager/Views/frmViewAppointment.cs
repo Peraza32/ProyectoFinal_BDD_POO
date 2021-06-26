@@ -136,25 +136,19 @@ namespace VaccinationSystemManager.Views
 
                     Model.Citizen newCitizen = new Model.Citizen();
 
-                    newCitizen = db.Citizens
-                        .Where(u => u.Dui == dui)
-                        .FirstOrDefault();
+                    newCitizen = UserInformation.GetCitizen(dui);
 
                     Model.Appointment checkAppointment = new Model.Appointment();
 
                     //Check for shot type 1 based on counter
                     if (countUser == 1)
                     {
-                        checkAppointment = db.Appointments
-                            .Where(u => u.DuiCitizen == newCitizen.Dui)
-                            .Where(u => u.ShotType == 1)
-                            .FirstOrDefault();
+                        checkAppointment = UserInformation.GetAppointment(dui,1) ;
+
 
                         //check vaccine
-                        var countVaccine = db.VaccinationProcesses
-                            .Where(u => u.DuiCitizen == newCitizen.Dui)
-                            .Where(u => u.ShotType == 1)
-                            .Count();
+                        var countVaccine = UserInformation.CountVaccination(dui, 1);
+                            
 
                         if (countVaccine == 0)
                         {
@@ -165,16 +159,11 @@ namespace VaccinationSystemManager.Views
                     //Check for shot type 2 based on counter
                     if (countUser == 2)
                     {
-                        checkAppointment = db.Appointments
-                            .Where(u => u.DuiCitizen == newCitizen.Dui)
-                            .Where(u => u.ShotType == 2)
-                            .FirstOrDefault();
+                        checkAppointment = UserInformation.GetAppointment(dui, 2);
+
 
                         //check vaccine
-                        var countVaccine = db.VaccinationProcesses
-                            .Where(u => u.DuiCitizen == newCitizen.Dui)
-                            .Where(u => u.ShotType == 2)
-                            .Count();
+                        var countVaccine = UserInformation.CountVaccination(dui, 2);
 
                         if (countVaccine == 0)
                         {

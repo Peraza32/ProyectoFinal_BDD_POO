@@ -27,6 +27,22 @@ namespace VaccinationSystemManager.Controller
         
         }
 
+        public static Appointment GetAppointment(string dui, int dose)
+        {
+            using (G4ProyectoDBContext db = new G4ProyectoDBContext())
+            {
+                Appointment appointment = db.Appointments
+                                           .Where(a => a.DuiCitizen == dui && a.ShotType == dose)
+                                           .FirstOrDefault();
+
+                return appointment;
+            }
+
+
+
+
+        }
+
         public static Appointment GetAppointment(string dui, DateTime date)
         {
             using (G4ProyectoDBContext db = new G4ProyectoDBContext())
@@ -100,6 +116,21 @@ namespace VaccinationSystemManager.Controller
         
         }
 
+        public static int CountVaccination(string dui, int dose)
+        {
+            
+
+            using (G4ProyectoDBContext db = new G4ProyectoDBContext())
+            {
+                var countVaccine = db.VaccinationProcesses
+                            .Where(u => u.DuiCitizen == dui)
+                            .Where(u => u.ShotType == dose)
+                            .Count();
+
+
+                return countVaccine;
+            }
+        }
 
     }
 }
