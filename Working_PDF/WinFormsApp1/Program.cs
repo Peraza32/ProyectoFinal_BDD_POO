@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VaccinationSystemManager.Views;
 
-
-namespace VaccinationSystemManager
+namespace WinFormsApp1
 {
     static class Program
     {
@@ -19,7 +17,7 @@ namespace VaccinationSystemManager
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new Form1());
         }
     }
 }

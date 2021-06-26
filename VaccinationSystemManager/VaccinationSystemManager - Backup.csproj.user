@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Views\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+<<<<<<< HEAD
+    <Compile Update="Views\SideEffects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\StartVaccinationProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\VerifyCitizenAppointment.cs">
+=======
+    <Compile Update="Views\frmAppointmentExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmAppointmentProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmAppointmentProcessDetails.cs">
+>>>>>>> Appointment
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

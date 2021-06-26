@@ -1,7 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Views\Form1.cs">
+    <Compile Update="Views\frmAppointmentExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmAppointmentProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmAppointmentProcessDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmSideEffects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmStartVaccinationProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmVerifyCitizenAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmViewAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

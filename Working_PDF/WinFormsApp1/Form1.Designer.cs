@@ -1,5 +1,5 @@
 ﻿
-namespace VaccinationSystemManager
+namespace WinFormsApp1
 {
     partial class Form1
     {
