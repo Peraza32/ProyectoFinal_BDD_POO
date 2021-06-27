@@ -349,7 +349,7 @@ namespace VaccinationSystemManager.Views
             this.groupBox2.Location = new System.Drawing.Point(996, 295);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(792, 303);
-            this.groupBox2.TabIndex = 24;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Grupo de prioridad";
             // 
