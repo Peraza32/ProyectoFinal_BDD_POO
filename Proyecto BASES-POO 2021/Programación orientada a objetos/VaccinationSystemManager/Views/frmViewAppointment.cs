@@ -216,8 +216,42 @@ namespace VaccinationSystemManager.Views
                                 "Vacunación COVID-19",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                            var currentAppointment = checkAppointment;
+
                             //Delete previus appointment in order to avoid future confilcs
                             db.Remove(db.Appointments.SingleOrDefault(u => u.Id == checkAppointment.Id));
+                            db.SaveChanges();
+
+                            // delete citizen's diseasies from database
+                            var citizenDiseasies = db.Diseases
+                                .Where(d => d.DuiCitizen == currentAppointment.DuiCitizen)
+                                .ToList();
+
+                            if (citizenDiseasies.Count > 0)
+                            {
+                                foreach (var d in citizenDiseasies)
+                                {
+                                    db.Remove(d);
+                                    db.SaveChanges();
+                                }
+                            }
+
+                            // delete citizen's disabilities from database
+                            var citizenDisabilities = db.Disabilities
+                                .Where(d => d.DuiCitizen == currentAppointment.DuiCitizen)
+                                .ToList();
+
+                            if (citizenDisabilities.Count > 0)
+                            {
+                                foreach (var d in citizenDisabilities)
+                                {
+                                    db.Remove(d);
+                                    db.SaveChanges();
+                                }
+                            }
+
+                            // delete citizen from database
+                            db.Remove(db.Citizens.SingleOrDefault(c => c.Dui == currentAppointment.DuiCitizen));
                             db.SaveChanges();
 
                             // returns to "register appointment" form
