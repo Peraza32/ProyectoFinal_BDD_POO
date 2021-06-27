@@ -96,6 +96,13 @@ namespace VaccinationSystemManager.Views
                     db.Citizens.Add(newCitizen);
                     db.SaveChanges();
 
+                    int age = (DateTime.Now - dtpBirthDate.Value).Days / 365;
+                    // citizens older than 60 year are elegible for vaccination
+
+                    if(age >= 60)
+                    {
+                        elegible = true;
+                    }
                     // has a chronic illness
                     if (txtDiseases.TextLength > 0)
                     {
