@@ -106,9 +106,9 @@ namespace VaccinationSystemManager.Views
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(23, 60);
+            this.label9.Location = new System.Drawing.Point(24, 60);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(153, 20);
+            this.label9.Size = new System.Drawing.Size(152, 20);
             this.label9.TabIndex = 44;
             this.label9.Text = "REGISTRAR EFECTOS SECUNDARIOS";
             // 
@@ -191,7 +191,7 @@ namespace VaccinationSystemManager.Views
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(50, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(36, 36);
+            this.label8.Size = new System.Drawing.Size(34, 36);
             this.label8.TabIndex = 48;
             this.label8.Text = "min";
             // 
@@ -212,7 +212,7 @@ namespace VaccinationSystemManager.Views
             0,
             0});
             this.nudAppearanceTime.Name = "nudAppearanceTime";
-            this.nudAppearanceTime.Size = new System.Drawing.Size(41, 34);
+            this.nudAppearanceTime.Size = new System.Drawing.Size(41, 29);
             this.nudAppearanceTime.TabIndex = 46;
             this.nudAppearanceTime.Value = new decimal(new int[] {
             1,
@@ -235,9 +235,9 @@ namespace VaccinationSystemManager.Views
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(170, 26);
+            this.pictureBox2.Location = new System.Drawing.Point(97, 23);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(462, 90);
+            this.pictureBox2.Size = new System.Drawing.Size(627, 114);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 41;
             this.pictureBox2.TabStop = false;
@@ -246,13 +246,13 @@ namespace VaccinationSystemManager.Views
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Sans", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Lucida Sans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.label1.Location = new System.Drawing.Point(342, 161);
+            this.label1.Location = new System.Drawing.Point(309, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 27);
+            this.label1.Size = new System.Drawing.Size(214, 31);
             this.label1.TabIndex = 44;
-            this.label1.Text = "Estadísticas";
+            this.label1.Text = "ESTADÍSTICAS";
             // 
             // tabControl1
             // 
@@ -269,10 +269,10 @@ namespace VaccinationSystemManager.Views
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tabPage1.Controls.Add(this.plotView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 42);
+            this.tabPage1.Location = new System.Drawing.Point(4, 35);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(738, 491);
+            this.tabPage1.Size = new System.Drawing.Size(738, 498);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Control vacunas";
             // 
@@ -292,10 +292,10 @@ namespace VaccinationSystemManager.Views
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tabPage2.Controls.Add(this.plotView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 42);
+            this.tabPage2.Location = new System.Drawing.Point(4, 35);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(738, 491);
+            this.tabPage2.Size = new System.Drawing.Size(738, 498);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Control efectos";
             // 
@@ -315,10 +315,10 @@ namespace VaccinationSystemManager.Views
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.tabPage3.Controls.Add(this.plotView3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 42);
+            this.tabPage3.Location = new System.Drawing.Point(4, 35);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(738, 491);
+            this.tabPage3.Size = new System.Drawing.Size(738, 498);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Control eficiencia";
             // 
@@ -342,9 +342,9 @@ namespace VaccinationSystemManager.Views
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(298, 806);
+            this.button1.Location = new System.Drawing.Point(324, 800);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 48);
+            this.button1.Size = new System.Drawing.Size(191, 58);
             this.button1.TabIndex = 7;
             this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = false;
@@ -352,7 +352,7 @@ namespace VaccinationSystemManager.Views
             // 
             // frmStatistics
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 33F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(56)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(802, 885);

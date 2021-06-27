@@ -79,15 +79,15 @@ namespace VaccinationSystemManager.Views
             // 
             // btnVerifyCitizenCancel
             // 
-            this.btnVerifyCitizenCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnVerifyCitizenCancel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVerifyCitizenCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
             this.btnVerifyCitizenCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerifyCitizenCancel.FlatAppearance.BorderSize = 0;
             this.btnVerifyCitizenCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerifyCitizenCancel.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnVerifyCitizenCancel.Location = new System.Drawing.Point(27, 3);
+            this.btnVerifyCitizenCancel.Location = new System.Drawing.Point(27, 8);
             this.btnVerifyCitizenCancel.Name = "btnVerifyCitizenCancel";
-            this.btnVerifyCitizenCancel.Size = new System.Drawing.Size(170, 57);
+            this.btnVerifyCitizenCancel.Size = new System.Drawing.Size(170, 75);
             this.btnVerifyCitizenCancel.TabIndex = 3;
             this.btnVerifyCitizenCancel.Text = "Regresar";
             this.btnVerifyCitizenCancel.UseVisualStyleBackColor = false;
@@ -95,15 +95,15 @@ namespace VaccinationSystemManager.Views
             // 
             // btnVerifyCitizenSearch
             // 
-            this.btnVerifyCitizenSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnVerifyCitizenSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVerifyCitizenSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(162)))), ((int)(((byte)(140)))));
             this.btnVerifyCitizenSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerifyCitizenSearch.FlatAppearance.BorderSize = 0;
             this.btnVerifyCitizenSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerifyCitizenSearch.Font = new System.Drawing.Font("Franklin Gothic Medium", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnVerifyCitizenSearch.Location = new System.Drawing.Point(253, 3);
+            this.btnVerifyCitizenSearch.Location = new System.Drawing.Point(253, 8);
             this.btnVerifyCitizenSearch.Name = "btnVerifyCitizenSearch";
-            this.btnVerifyCitizenSearch.Size = new System.Drawing.Size(170, 57);
+            this.btnVerifyCitizenSearch.Size = new System.Drawing.Size(170, 75);
             this.btnVerifyCitizenSearch.TabIndex = 4;
             this.btnVerifyCitizenSearch.Text = "Buscar";
             this.btnVerifyCitizenSearch.UseVisualStyleBackColor = false;
@@ -152,12 +152,12 @@ namespace VaccinationSystemManager.Views
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.btnVerifyCitizenCancel, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnVerifyCitizenSearch, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(60, 353);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(60, 339);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(451, 65);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(451, 92);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // epVerify
