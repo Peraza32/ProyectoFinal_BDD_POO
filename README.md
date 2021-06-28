@@ -31,6 +31,6 @@ La aplicación de gestión busca apoyar al ministerio de Salud de El Salvador en
 
 1. Ejecutar el [script](https://github.com/UCASV/proyecto-final-grupo4/blob/main/Proyecto%20BASES-POO%202021/Programaci%C3%B3n%20orientada%20a%20objetos/EN_Proyecto-Script-V1.2.sql) de la base de datos en sql server para crear las tablas necesarias y permitir una conexión desde la aplicación.
 2. Ejecutar el instalador del programa y realizar los pasos correspondientes (si se instalará para todos los usuarios, ruta de los archivos de instalación, etc).
-3. Iniciar el programa. Se recomienda consultar el [manual de usuario](link pendiente) para conocer su uso.
+3. Iniciar el programa. Se recomienda consultar el [manual de usuario](https://github.com/UCASV/proyecto-final-grupo4/blob/main/Proyecto%20BASES-POO%202021/Programaci%C3%B3n%20orientada%20a%20objetos/Manual%20de%20usuario.pdf) para conocer su uso.
 
-### Manual de usuario
+### [Manual de usuario](https://github.com/UCASV/proyecto-final-grupo4/blob/main/Proyecto%20BASES-POO%202021/Programaci%C3%B3n%20orientada%20a%20objetos/Manual%20de%20usuario.pdf)
