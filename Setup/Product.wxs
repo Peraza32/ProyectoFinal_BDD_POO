@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="0128e41a-f69d-49e8-ac49-8c4a22a6cd49" Name="Vaccination System Manager" Language="1033" Version="1.0.0.0" Manufacturer="The Boys"
+			 UpgradeCode="e328d123-8afa-4a6f-9c4c-062e1c26d2a2">
+		<Package InstallerVersion="100" Compressed="yes" InstallScope="perMachine" 
+				 Id='*' Keywords='Installer' Description="Vaccination System Manager"
+				 Comments='Vaccination System Manager is a registered trademark of Acme Ltd.' Manufacturer='The Boys.'
+			 Languages='1033'  SummaryCodepage='1252' />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="Setup" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="Setup" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+			<Component Source="$(var.MyApplication.TargetPath)" />
+			
+			
+			<!-- </Component> -->
+		</ComponentGroup>
+	</Fragment>
+</Wix>

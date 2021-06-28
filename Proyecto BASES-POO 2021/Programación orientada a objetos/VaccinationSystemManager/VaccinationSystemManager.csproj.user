@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup />
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\Victo\Desktop\Progra\C#\ProyectoFinal\Proyecto BASES-POO 2021\Programación orientada a objetos\VaccinationSystemManager\Properties\PublishProfiles\PublishManager.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Update="Views\frmAppointmentProcess.cs">
       <SubType>Form</SubType>
